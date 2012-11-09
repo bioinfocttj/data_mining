@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<uniprot xmlns="http://uniprot.org/uniprot" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://uniprot.org/uniprot http://www.uniprot.org/support/docs/uniprot.xsd">
+<entry dataset="TrEMBL" created="1998-06-01" modified="2012-10-03" version="76">
+<accession>O43209</accession>
+<name>O43209_HUMAN</name>
+<protein>
+<submittedName>
+<fullName evidence="6">Homo sapiens clone 23678</fullName>
+</submittedName>
+</protein>
+<organism evidence="6">
+<name type="scientific">Homo sapiens</name>
+<name type="common">Human</name>
+<dbReference type="NCBI Taxonomy" id="9606"/>
+<lineage>
+<taxon>Eukaryota</taxon>
+<taxon>Metazoa</taxon>
+<taxon>Chordata</taxon>
+<taxon>Craniata</taxon>
+<taxon>Vertebrata</taxon>
+<taxon>Euteleostomi</taxon>
+<taxon>Mammalia</taxon>
+<taxon>Eutheria</taxon>
+<taxon>Euarchontoglires</taxon>
+<taxon>Primates</taxon>
+<taxon>Haplorrhini</taxon>
+<taxon>Catarrhini</taxon>
+<taxon>Hominidae</taxon>
+<taxon>Homo</taxon>
+</lineage>
+</organism>
+<reference key="1" evidence="6">
+<citation type="journal article" date="1996" name="Anal. Biochem." volume="236" first="107" last="113">
+<title>A "double adaptor" method for improved shotgun library construction.</title>
+<authorList>
+<person name="Andersson B."/>
+<person name="Wentland M.A."/>
+<person name="Ricafrente J.Y."/>
+<person name="Liu W."/>
+<person name="Gibbs R.A."/>
+</authorList>
+<dbReference type="MEDLINE" id="96207227"/>
+<dbReference type="PubMed" id="8619474"/>
+<dbReference type="DOI" id="10.1006/abio.1996.0138"/>
+</citation>
+<scope>NUCLEOTIDE SEQUENCE</scope>
+<source>
+<tissue evidence="6">Brain</tissue>
+</source>
+</reference>
+<reference key="2" evidence="6">
+<citation type="journal article" date="1997" name="Genome Res." volume="7" first="353" last="358">
+<title>Large-scale concatenation cDNA sequencing.</title>
+<authorList>
+<person name="Yu W."/>
+<person name="Andersson B."/>
+<person name="Worley K.C."/>
+<person name="Muzny D.M."/>
+<person name="Ding Y."/>
+<person name="Liu W."/>
+<person name="Ricafrente J.Y."/>
+<person name="Wentland M.A."/>
+<person name="Lennon G."/>
+<person name="Gibbs R.A."/>
+</authorList>
+<dbReference type="MEDLINE" id="97264341"/>
+<dbReference type="PubMed" id="9110174"/>
+</citation>
+<scope>NUCLEOTIDE SEQUENCE</scope>
+<source>
+<tissue evidence="6">Brain</tissue>
+</source>
+</reference>
+<comment type="function">
+<text evidence="5">Tubulin is the major constituent of microtubules. It binds two moles of GTP, one at an exchangeable site on the beta chain and one at a non-exchangeable site on the alpha-chain (By similarity).</text>
+</comment>
+<comment type="subunit">
+<text evidence="5">Dimer of alpha and beta chains (By similarity).</text>
+</comment>
+<comment type="similarity">
+<text evidence="3">Belongs to the tubulin family.</text>
+</comment>
+<dbReference type="EMBL" id="AF035316">
+<property type="protein sequence ID" value="AAB88188.1"/>
+<property type="molecule type" value="mRNA"/>
+</dbReference>
+<dbReference type="IPI" id="IPI00031370"/>
+<dbReference type="UniGene" id="Hs.300701"/>
+<dbReference type="HSSP" id="P02554">
+<property type="PDB accession" value="1JFF"/>
+</dbReference>
+<dbReference type="ProteinModelPortal" id="O43209"/>
+<dbReference type="STRING" id="O43209"/>
+<dbReference type="PRIDE" id="O43209"/>
+<dbReference type="HOVERGEN" id="HBG000089"/>
+<dbReference type="ArrayExpress" id="O43209"/>
+<dbReference type="Bgee" id="O43209"/>
+<dbReference type="GO" id="GO:0005874">
+<property type="term" value="C:microtubule"/>
+<property type="evidence" value="IEA:UniProtKB-KW"/>
+</dbReference>
+<dbReference type="GO" id="GO:0005525">
+<property type="term" value="F:GTP binding"/>
+<property type="evidence" value="IEA:UniProtKB-KW"/>
+</dbReference>
+<dbReference type="GO" id="GO:0003924">
+<property type="term" value="F:GTPase activity"/>
+<property type="evidence" value="IEA:InterPro"/>
+</dbReference>
+<dbReference type="GO" id="GO:0042277">
+<property type="term" value="F:peptide binding"/>
+<property type="evidence" value="IEA:Compara"/>
+</dbReference>
+<dbReference type="GO" id="GO:0005198">
+<property type="term" value="F:structural molecule activity"/>
+<property type="evidence" value="IEA:InterPro"/>
+</dbReference>
+<dbReference type="GO" id="GO:0007018">
+<property type="term" value="P:microtubule-based movement"/>
+<property type="evidence" value="IEA:InterPro"/>
+</dbReference>
+<dbReference type="GO" id="GO:0007067">
+<property type="term" value="P:mitosis"/>
+<property type="evidence" value="IEA:Compara"/>
+</dbReference>
+<dbReference type="GO" id="GO:0030182">
+<property type="term" value="P:neuron differentiation"/>
+<property type="evidence" value="IEA:Compara"/>
+</dbReference>
+<dbReference type="GO" id="GO:0001764">
+<property type="term" value="P:neuron migration"/>
+<property type="evidence" value="IEA:Compara"/>
+</dbReference>
+<dbReference type="GO" id="GO:0051258">
+<property type="term" value="P:protein polymerization"/>
+<property type="evidence" value="IEA:InterPro"/>
+</dbReference>
+<dbReference type="Gene3D" id="G3DSA:3.30.1330.20">
+<property type="entry name" value="Tubulin/FtsZ_2-layer-sand-dom"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="Gene3D" id="G3DSA:1.10.287.600">
+<property type="entry name" value="Tubulin_C"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="Gene3D" id="G3DSA:3.40.50.1440">
+<property type="entry name" value="Tubulin_FtsZ"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR002453">
+<property type="entry name" value="Beta_tubulin"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR008280">
+<property type="entry name" value="Tub_FtsZ_C"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR000217">
+<property type="entry name" value="Tubulin"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR018316">
+<property type="entry name" value="Tubulin/FtsZ_2-layer-sand-dom"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR023123">
+<property type="entry name" value="Tubulin_C"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR017975">
+<property type="entry name" value="Tubulin_CS"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR003008">
+<property type="entry name" value="Tubulin_FtsZ_GTPase"/>
+</dbReference>
+<dbReference type="PANTHER" id="PTHR11588">
+<property type="entry name" value="PTHR11588"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="Pfam" id="PF00091">
+<property type="entry name" value="Tubulin"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="Pfam" id="PF03953">
+<property type="entry name" value="Tubulin_C"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="PRINTS" id="PR01163">
+<property type="entry name" value="BETATUBULIN"/>
+</dbReference>
+<dbReference type="PRINTS" id="PR01161">
+<property type="entry name" value="TUBULIN"/>
+</dbReference>
+<dbReference type="SMART" id="SM00864">
+<property type="entry name" value="Tubulin"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="SMART" id="SM00865">
+<property type="entry name" value="Tubulin_C"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="SUPFAM" id="SSF55307">
+<property type="entry name" value="Tub_FtsZ_C"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="SUPFAM" id="SSF52490">
+<property type="entry name" value="Tubulin_FtsZ"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="PROSITE" id="PS00227">
+<property type="entry name" value="TUBULIN"/>
+<property type="match status" value="1"/>
+</dbReference>
+<proteinExistence type="evidence at transcript level"/>
+<keyword id="KW-0342" evidence="2 4">GTP-binding</keyword>
+<keyword id="KW-0493" evidence="1 3">Microtubule</keyword>
+<keyword id="KW-0547" evidence="2 4">Nucleotide-binding</keyword>
+<feature type="non-terminal residue" evidence="6">
+<location>
+<position position="1"/>
+</location>
+</feature>
+<evidence key="1" type="ECO:0000203">
+<source>
+<dbReference type="SAAS" id="SAAS008280_004_000293"/>
+</source>
+</evidence>
+<evidence key="2" type="ECO:0000203">
+<source>
+<dbReference type="SAAS" id="SAAS023123_004_000246"/>
+</source>
+</evidence>
+<evidence key="3" type="ECO:0000203">
+<source>
+<dbReference type="RuleBase" id="RU000352"/>
+</source>
+</evidence>
+<evidence key="4" type="ECO:0000203">
+<source>
+<dbReference type="RuleBase" id="RU000351"/>
+</source>
+</evidence>
+<evidence key="5" type="ECO:0000203">
+<source>
+<dbReference type="RuleBase" id="RU003505"/>
+</source>
+</evidence>
+<evidence key="6" type="ECO:0000313">
+<source>
+<dbReference type="EMBL" id="AAB88188.1"/>
+</source>
+</evidence>
+<sequence length="342" mass="38570" checksum="255FF7CC0B7464CC" modified="1998-06-01" version="1" fragment="single">
+GHYTEGAELVDSVLDVVRKESESCDCLQGFQLTHSLGGGTGSGMGTLLISKIREEYPDRI
+MNTFSVMPSPKVSDTVVEPYNATLSVHQLVENTDETYCIDNEALYDICFRTLKLTTPTYG
+DLNHLVSATMSGVTTCLRFPGQLNADLRKLAVNMVPFPRLHFFMPGFAPLTSRGSQQYRA
+LTVPELTQQMFDSKNMMAACDPRHGRYLTVAAIFRGRMSMKEVDEQMLNVQNKNSSYFVE
+WIPNNVKTAVCDIPPRGLKMSATFIGNSTAIQELFKRISEQFTAMFRRKAFLHWYTGEGM
+DEMEFTEAESNMNDLVSEYQQYQDATADEQGEFEEEEGEDEA
+</sequence>
+</entry>
+<copyright>
+Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+Distributed under the Creative Commons Attribution-NoDerivs License
+</copyright>
+</uniprot>
