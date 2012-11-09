@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uniprot xmlns="http://uniprot.org/uniprot" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://uniprot.org/uniprot http://www.uniprot.org/support/docs/uniprot.xsd">
+<entry dataset="Swiss-Prot" created="1989-07-01" modified="2012-10-03" version="113">
+<accession>P10319</accession>
+<accession>Q29925</accession>
+<accession>Q9TP35</accession>
+<accession>Q9TPS6</accession>
+<name>1B58_HUMAN</name>
+<protein>
+<recommendedName>
+<fullName>HLA class I histocompatibility antigen, B-58 alpha chain</fullName>
+</recommendedName>
+<alternativeName>
+<fullName>Bw-58</fullName>
+</alternativeName>
+<alternativeName>
+<fullName>MHC class I antigen B*58</fullName>
+</alternativeName>
+</protein>
+<gene>
+<name type="primary">HLA-B</name>
+<name type="synonym">HLAB</name>
+</gene>
+<organism>
+<name type="scientific">Homo sapiens</name>
+<name type="common">Human</name>
+<dbReference type="NCBI Taxonomy" id="9606"/>
+<lineage>
+<taxon>Eukaryota</taxon>
+<taxon>Metazoa</taxon>
+<taxon>Chordata</taxon>
+<taxon>Craniata</taxon>
+<taxon>Vertebrata</taxon>
+<taxon>Euteleostomi</taxon>
+<taxon>Mammalia</taxon>
+<taxon>Eutheria</taxon>
+<taxon>Euarchontoglires</taxon>
+<taxon>Primates</taxon>
+<taxon>Haplorrhini</taxon>
+<taxon>Catarrhini</taxon>
+<taxon>Hominidae</taxon>
+<taxon>Homo</taxon>
+</lineage>
+</organism>
+<reference key="1">
+<citation type="journal article" date="1985" name="J. Biol. Chem." volume="260" first="11924" last="11933">
+<title>The complete primary structure of HLA-Bw58.</title>
+<authorList>
+<person name="Ways J.P."/>
+<person name="Coppin H.L."/>
+<person name="Parham P."/>
+</authorList>
+<dbReference type="MEDLINE" id="86008247"/>
+<dbReference type="PubMed" id="2995352"/>
+</citation>
+<scope>NUCLEOTIDE SEQUENCE [GENOMIC DNA] (ALLELE B*58:01)</scope>
+</reference>
+<reference key="2">
+<citation type="submission" date="1997-10" db="EMBL/GenBank/DDBJ databases">
+<authorList>
+<person name="Inoue T."/>
+<person name="Ogawa A."/>
+</authorList>
+</citation>
+<scope>NUCLEOTIDE SEQUENCE (ALLELE B*58:01)</scope>
+<source>
+<tissue>Blood</tissue>
+</source>
+</reference>
+<reference key="3">
+<citation type="journal article" date="1995" name="Tissue Antigens" volume="45" first="177" last="187">
+<title>The HLA-A,B,C genotype of the class I negative cell line Daudi reveals novel HLA-A and -B alleles.</title>
+<authorList>
+<person name="Browning M.J."/>
+<person name="Madrigal J.A."/>
+<person name="Krausa P."/>
+<person name="Kowalski H."/>
+<person name="Allsopp C.E."/>
+<person name="Little A.-M."/>
+<person name="Turner S."/>
+<person name="Adams E.J."/>
+<person name="Arnett K.L."/>
+<person name="Bodmer W.F."/>
+<person name="Parham P."/>
+</authorList>
+<dbReference type="MEDLINE" id="95282145"/>
+<dbReference type="PubMed" id="7761977"/>
+<dbReference type="DOI" id="10.1111/j.1399-0039.1995.tb02437.x"/>
+</citation>
+<scope>NUCLEOTIDE SEQUENCE [MRNA] (ALLELE B*58:02)</scope>
+</reference>
+<reference key="4">
+<citation type="journal article" date="2002" name="Tissue Antigens" volume="60" first="186" last="188">
+<title>New HLA-B alleles identified and sequences extended in potential bone marrow donors: B*5804, B*4418, B*1558, and B*4805.</title>
+<authorList>
+<person name="Williams T.M."/>
+<person name="Wu J."/>
+<person name="Bassinger S."/>
+<person name="Feldman D."/>
+<person name="Birkos S."/>
+<person name="Kearns J."/>
+<person name="Kamoun M."/>
+</authorList>
+<dbReference type="MEDLINE" id="22282374"/>
+<dbReference type="PubMed" id="12392514"/>
+<dbReference type="DOI" id="10.1034/j.1399-0039.2002.600210.x"/>
+</citation>
+<scope>NUCLEOTIDE SEQUENCE OF 1-206 (ALLELE B*58:04)</scope>
+</reference>
+<reference key="5">
+<citation type="journal article" date="2001" name="Tissue Antigens" volume="57" first="481" last="485">
+<title>Twenty-nine new HLA-B alleles associated with antigens in the 5C CREG.</title>
+<authorList>
+<person name="Steiner N.K."/>
+<person name="Kosman C."/>
+<person name="Jones P.F."/>
+<person name="Gans C.P."/>
+<person name="Rodriguez-Marino S.G."/>
+<person name="Rizzuto G."/>
+<person name="Baldassarre L.A."/>
+<person name="Edson S."/>
+<person name="Koester R."/>
+<person name="Sese D."/>
+<person name="Mitton W."/>
+<person name="Ng J."/>
+<person name="Hartzman R.J."/>
+<person name="Hurley C.K."/>
+</authorList>
+<dbReference type="MEDLINE" id="21442089"/>
+<dbReference type="PubMed" id="11556976"/>
+<dbReference type="DOI" id="10.1034/j.1399-0039.2001.057005481.x"/>
+</citation>
+<scope>NUCLEOTIDE SEQUENCE OF 26-206 (ALLELE B*58:05)</scope>
+</reference>
+<reference key="6">
+<citation type="journal article" date="2005" name="Proc. Natl. Acad. Sci. U.S.A." volume="102" first="4134" last="4139">
+<title>HLA-B*5801 allele as a genetic marker for severe cutaneous adverse reactions caused by allopurinol.</title>
+<authorList>
+<person name="Hung S.I."/>
+<person name="Chung W.H."/>
+<person name="Liou L.B."/>
+<person name="Chu C.C."/>
+<person name="Lin M."/>
+<person name="Huang H.P."/>
+<person name="Lin Y.L."/>
+<person name="Lan J.L."/>
+<person name="Yang L.C."/>
+<person name="Hong H.S."/>
+<person name="Chen M.J."/>
+<person name="Lai P.C."/>
+<person name="Wu M.S."/>
+<person name="Chu C.Y."/>
+<person name="Wang K.H."/>
+<person name="Chen C.H."/>
+<person name="Fann C.S."/>
+<person name="Wu J.Y."/>
+<person name="Chen Y.T."/>
+</authorList>
+<dbReference type="PubMed" id="15743917"/>
+<dbReference type="DOI" id="10.1073/pnas.0409500102"/>
+</citation>
+<scope>ASSOCIATION OF ALLELE B*58:01 WITH SEVERE CUTANEOUS ADVERSE REACTIONS TO ALLOPURINOL</scope>
+</reference>
+<comment type="function">
+<text>Involved in the presentation of foreign antigens to the immune system.</text>
+</comment>
+<comment type="subunit">
+<text>Heterodimer of an alpha chain and a beta chain (beta-2-microglobulin). Interacts with human herpesvirus 8 MIR1 protein (By similarity).</text>
+</comment>
+<comment type="subcellular location">
+<subcellularLocation>
+<location>Membrane</location>
+<topology>Single-pass type I membrane protein</topology>
+</subcellularLocation>
+</comment>
+<comment type="PTM">
+<text>Polyubiquitinated in a post ER compartment by interaction with human herpesvirus 8 MIR1 protein. This targets the protein for rapid degradation via the ubiquitin system (By similarity).</text>
+</comment>
+<comment type="polymorphism">
+<text>The following alleles of B-58 are known: B*58:01, B*58:02, B*58:04 and B*58:05. The sequence shown is that of B*58:01. Allele B*58:01 is an important genetic risk factor for severe cutaneous adverse reactions to allopurinol in the Han Chinese population [MIM:608579].</text>
+</comment>
+<comment type="similarity">
+<text>Belongs to the MHC class I family.</text>
+</comment>
+<comment type="similarity">
+<text>Contains 1 Ig-like C1-type (immunoglobulin-like) domain.</text>
+</comment>
+<dbReference type="EMBL" id="M11799">
+<property type="protein sequence ID" value="AAA59628.1"/>
+<property type="molecule type" value="Genomic_DNA"/>
+</dbReference>
+<dbReference type="EMBL" id="AB008102">
+<property type="protein sequence ID" value="BAA22916.1"/>
+<property type="molecule type" value="mRNA"/>
+</dbReference>
+<dbReference type="EMBL" id="L33923">
+<property type="protein sequence ID" value="AAA74406.1"/>
+<property type="molecule type" value="mRNA"/>
+</dbReference>
+<dbReference type="EMBL" id="AH008324">
+<property type="protein sequence ID" value="AAF04579.1"/>
+<property type="molecule type" value="Genomic_DNA"/>
+</dbReference>
+<dbReference type="EMBL" id="AH008968">
+<property type="protein sequence ID" value="AAF21438.1"/>
+<property type="molecule type" value="Genomic_DNA"/>
+</dbReference>
+<dbReference type="IPI" id="IPI00472138"/>
+<dbReference type="PIR" id="A23895">
+<property type="entry name" value="HLHUB8"/>
+</dbReference>
+<dbReference type="PIR" id="I84490">
+<property type="entry name" value="I84490"/>
+</dbReference>
+<dbReference type="UniGene" id="Hs.737485"/>
+<dbReference type="UniGene" id="Hs.77961"/>
+<dbReference type="ProteinModelPortal" id="P10319"/>
+<dbReference type="SMR" id="P10319">
+<property type="residue range" value="25-298"/>
+</dbReference>
+<dbReference type="IntAct" id="P10319">
+<property type="interactions" value="1"/>
+</dbReference>
+<dbReference type="STRING" id="P10319"/>
+<dbReference type="DMDM" id="122168"/>
+<dbReference type="PRIDE" id="P10319"/>
+<dbReference type="Ensembl" id="ENST00000435618">
+<property type="protein sequence ID" value="ENSP00000405178"/>
+<property type="gene ID" value="ENSG00000224608"/>
+</dbReference>
+<dbReference type="GeneCards" id="GC06M031321"/>
+<dbReference type="HGNC" id="HGNC:4932">
+<property type="gene designation" value="HLA-B"/>
+</dbReference>
+<dbReference type="MIM" id="142830">
+<property type="type" value="gene"/>
+</dbReference>
+<dbReference type="MIM" id="608579">
+<property type="type" value="phenotype"/>
+</dbReference>
+<dbReference type="neXtProt" id="NX_P10319"/>
+<dbReference type="HOVERGEN" id="HBG016709"/>
+<dbReference type="InParanoid" id="P10319"/>
+<dbReference type="Reactome" id="REACT_6900">
+<property type="pathway name" value="Immune System"/>
+</dbReference>
+<dbReference type="CleanEx" id="HS_HLA-B"/>
+<dbReference type="Genevestigator" id="P10319"/>
+<dbReference type="GO" id="GO:0031901">
+<property type="term" value="C:early endosome membrane"/>
+<property type="evidence" value="TAS:Reactome"/>
+</dbReference>
+<dbReference type="GO" id="GO:0012507">
+<property type="term" value="C:ER to Golgi transport vesicle membrane"/>
+<property type="evidence" value="TAS:Reactome"/>
+</dbReference>
+<dbReference type="GO" id="GO:0000139">
+<property type="term" value="C:Golgi membrane"/>
+<property type="evidence" value="TAS:Reactome"/>
+</dbReference>
+<dbReference type="GO" id="GO:0071556">
+<property type="term" value="C:integral to lumenal side of endoplasmic reticulum membrane"/>
+<property type="evidence" value="TAS:Reactome"/>
+</dbReference>
+<dbReference type="GO" id="GO:0042612">
+<property type="term" value="C:MHC class I protein complex"/>
+<property type="evidence" value="IEA:UniProtKB-KW"/>
+</dbReference>
+<dbReference type="GO" id="GO:0030670">
+<property type="term" value="C:phagocytic vesicle membrane"/>
+<property type="evidence" value="TAS:Reactome"/>
+</dbReference>
+<dbReference type="GO" id="GO:0005886">
+<property type="term" value="C:plasma membrane"/>
+<property type="evidence" value="TAS:Reactome"/>
+</dbReference>
+<dbReference type="GO" id="GO:0002479">
+<property type="term" value="P:antigen processing and presentation of exogenous peptide antigen via MHC class I, TAP-dependent"/>
+<property type="evidence" value="TAS:Reactome"/>
+</dbReference>
+<dbReference type="GO" id="GO:0002480">
+<property type="term" value="P:antigen processing and presentation of exogenous peptide antigen via MHC class I, TAP-independent"/>
+<property type="evidence" value="TAS:Reactome"/>
+</dbReference>
+<dbReference type="GO" id="GO:0060333">
+<property type="term" value="P:interferon-gamma-mediated signaling pathway"/>
+<property type="evidence" value="TAS:Reactome"/>
+</dbReference>
+<dbReference type="GO" id="GO:0050776">
+<property type="term" value="P:regulation of immune response"/>
+<property type="evidence" value="TAS:Reactome"/>
+</dbReference>
+<dbReference type="GO" id="GO:0060337">
+<property type="term" value="P:type I interferon-mediated signaling pathway"/>
+<property type="evidence" value="TAS:Reactome"/>
+</dbReference>
+<dbReference type="GO" id="GO:0019048">
+<property type="term" value="P:virus-host interaction"/>
+<property type="evidence" value="IEA:UniProtKB-KW"/>
+</dbReference>
+<dbReference type="Gene3D" id="G3DSA:2.60.40.10">
+<property type="entry name" value="Ig-like_fold"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="Gene3D" id="G3DSA:3.30.500.10">
+<property type="entry name" value="MHC_I-like_Ag-recog"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR007110">
+<property type="entry name" value="Ig-like"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR013783">
+<property type="entry name" value="Ig-like_fold"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR003006">
+<property type="entry name" value="Ig/MHC_CS"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR003597">
+<property type="entry name" value="Ig_C1-set"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR011161">
+<property type="entry name" value="MHC_I-like_Ag-recog"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR011162">
+<property type="entry name" value="MHC_I/II-like_Ag-recog"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR001039">
+<property type="entry name" value="MHC_I_a_a1/a2"/>
+</dbReference>
+<dbReference type="InterPro" id="IPR010579">
+<property type="entry name" value="MHC_I_a_C"/>
+</dbReference>
+<dbReference type="Pfam" id="PF07654">
+<property type="entry name" value="C1-set"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="Pfam" id="PF00129">
+<property type="entry name" value="MHC_I"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="Pfam" id="PF06623">
+<property type="entry name" value="MHC_I_C"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="PRINTS" id="PR01638">
+<property type="entry name" value="MHCCLASSI"/>
+</dbReference>
+<dbReference type="SMART" id="SM00407">
+<property type="entry name" value="IGc1"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="SUPFAM" id="SSF54452">
+<property type="entry name" value="MHC_I/II-like_Ag-recog"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="PROSITE" id="PS50835">
+<property type="entry name" value="IG_LIKE"/>
+<property type="match status" value="1"/>
+</dbReference>
+<dbReference type="PROSITE" id="PS00290">
+<property type="entry name" value="IG_MHC"/>
+<property type="match status" value="1"/>
+</dbReference>
+<proteinExistence type="evidence at transcript level"/>
+<keyword id="KW-0181">Complete proteome</keyword>
+<keyword id="KW-1015">Disulfide bond</keyword>
+<keyword id="KW-0325">Glycoprotein</keyword>
+<keyword id="KW-0945">Host-virus interaction</keyword>
+<keyword id="KW-0391">Immunity</keyword>
+<keyword id="KW-0490">MHC I</keyword>
+<keyword id="KW-0472">Membrane</keyword>
+<keyword id="KW-0621">Polymorphism</keyword>
+<keyword id="KW-1185">Reference proteome</keyword>
+<keyword id="KW-0732">Signal</keyword>
+<keyword id="KW-0812">Transmembrane</keyword>
+<keyword id="KW-1133">Transmembrane helix</keyword>
+<keyword id="KW-0832">Ubl conjugation</keyword>
+<feature type="signal peptide">
+<location>
+<begin position="1"/>
+<end position="24"/>
+</location>
+</feature>
+<feature type="chain" description="HLA class I histocompatibility antigen, B-58 alpha chain" id="PRO_0000018861">
+<location>
+<begin position="25"/>
+<end position="362"/>
+</location>
+</feature>
+<feature type="topological domain" description="Extracellular" status="potential">
+<location>
+<begin position="25"/>
+<end position="308"/>
+</location>
+</feature>
+<feature type="transmembrane region" description="Helical;" status="potential">
+<location>
+<begin position="309"/>
+<end position="332"/>
+</location>
+</feature>
+<feature type="topological domain" description="Cytoplasmic" status="potential">
+<location>
+<begin position="333"/>
+<end position="362"/>
+</location>
+</feature>
+<feature type="domain" description="Ig-like C1-type">
+<location>
+<begin position="209"/>
+<end position="295"/>
+</location>
+</feature>
+<feature type="region of interest" description="Alpha-1">
+<location>
+<begin position="25"/>
+<end position="114"/>
+</location>
+</feature>
+<feature type="region of interest" description="Alpha-2">
+<location>
+<begin position="115"/>
+<end position="206"/>
+</location>
+</feature>
+<feature type="region of interest" description="Alpha-3">
+<location>
+<begin position="207"/>
+<end position="298"/>
+</location>
+</feature>
+<feature type="region of interest" description="Connecting peptide">
+<location>
+<begin position="299"/>
+<end position="308"/>
+</location>
+</feature>
+<feature type="glycosylation site" description="N-linked (GlcNAc...)" status="by similarity">
+<location>
+<position position="110"/>
+</location>
+</feature>
+<feature type="disulfide bond" status="by similarity">
+<location>
+<begin position="125"/>
+<end position="188"/>
+</location>
+</feature>
+<feature type="disulfide bond" status="by similarity">
+<location>
+<begin position="227"/>
+<end position="283"/>
+</location>
+</feature>
+<feature type="sequence variant" description="In allele B*58:04." id="VAR_016498">
+<original>G</original>
+<variation>E</variation>
+<location>
+<position position="86"/>
+</location>
+</feature>
+<feature type="sequence variant" description="In allele B*58:02." id="VAR_016499">
+<original>II</original>
+<variation>TL</variation>
+<location>
+<begin position="118"/>
+<end position="119"/>
+</location>
+</feature>
+<feature type="sequence variant" description="In allele B*58:02." id="VAR_016500">
+<original>R</original>
+<variation>W</variation>
+<location>
+<position position="121"/>
+</location>
+</feature>
+<feature type="sequence variant" description="In allele B*58:05." id="VAR_016666">
+<original>W</original>
+<variation>L</variation>
+<location>
+<position position="171"/>
+</location>
+</feature>
+<feature type="sequence variant" description="In allele B*58:05." id="VAR_016667">
+<original>V</original>
+<variation>A</variation>
+<location>
+<position position="176"/>
+</location>
+</feature>
+<feature type="sequence variant" description="In allele B*58:05; requires 2 nucleotide substitutions." id="VAR_016668">
+<original>L</original>
+<variation>T</variation>
+<location>
+<position position="187"/>
+</location>
+</feature>
+<sequence length="362" mass="40337" checksum="2056116240BB9AC0" modified="1989-07-01" version="1" precursor="true">
+MRVTAPRTVLLLLWGAVALTETWAGSHSMRYFYTAMSRPGRGEPRFIAVGYVDDTQFVRF
+DSDAASPRTEPRAPWIEQEGPEYWDGETRNMKASAQTYRENLRIALRYYNQSEAGSHIIQ
+RMYGCDLGPDGRLLRGHDQSAYDGKDYIALNEDLSSWTAADTAAQITQRKWEAARVAEQL
+RAYLEGLCVEWLRRYLENGKETLQRADPPKTHVTHHPVSDHEATLRCWALGFYPAEITLT
+WQRDGEDQTQDTELVETRPAGDRTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP
+SSQSTIPIVGIVAGLAVLAVVVIGAVVATVMCRRKSSGGKGGSYSQAASSDSAQGSDVSL
+TA
+</sequence>
+</entry>
+<copyright>
+Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+Distributed under the Creative Commons Attribution-NoDerivs License
+</copyright>
+</uniprot>
