@@ -1,15 +1,16 @@
-\documentclass[11pt,a4paper]{report}
-\usepackage[utf8x]{inputenc}
-\usepackage{ucs}
-\usepackage[french]{babel}
-\usepackage[T1]{fontenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{lmodern}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{Aurélie LeLièvre \\ Saraï Mola \\ Typhaine Paysan-Lafosse \\ Joris Sansen}
-\begin{document}
-\maketitle
-\end{document}
+\section*{Introduction}
+Le sujet de notre projet est le suivant : "Recherche de protéines similaires". Pour cela nous utiliserons la technique de data mining assimilée tout au long des TD.
+
+Le data mining, ou exploration de données, est une technique ayant pour but d'extraire des informations particulières ou des motifs intéressants à partir d'une grande quantité de données à l'aide de plusieurs types de méthodes.
+
+Son utilisation ne s'arrête pas seulement au monde de la bio-informatique , bien au contraire, elle est fréquemment utilisée dans divers autres secteurs tels que la vente, le domaine bancaire ou encore le monde des assurances.
+Contrairement aux méthodes statistiques souvent utilisées, le data mining n'a pas besoin de connaître une hypothèse de départ pour arriver à des résultats. En effet, cette méthode  d'analyse de données utilise un pré-traitement des données qui permet la structuration et donc l'extraction de connaissances de façon beaucoup plus aisée. Le pré-traitement en question est divisé en plusieurs étapes. Celles-ci sont :
+\begin{description}
+\item[extraction]il faut d'abord récupérer les données à partir de sources, potentiellement multiples, hétérogènes et externes si cela n'a pas été fait au préalable.
+\item[nettoyage]il s'agit ensuite de détecter les anomalies éventuellement présentes dans le jeu de données constitué et d'y remédier.
+\item[transformation des données] il est ensuite utile de convertir tout les formats présents en un seul et unique, pour une utilisation optimale.
+\end{description}
+
+À la suite de cela, on peut envisager le chargement des données qui consiste entre autre à trier ces dernières selon certains critères que nous expliquerons plus en détails par la suite.
+
+Enfin, une fois toutes ces opérations réalisées, on obtient gr\^ace aux distances calculées plusieurs groupes de données (clusters) contenant des protéines de structures similaires.
