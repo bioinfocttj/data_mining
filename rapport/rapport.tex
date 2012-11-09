@@ -1,0 +1,40 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{lmodern}
+\usepackage[pdftex]{graphicx}
+\usepackage{titlesec}
+\usepackage{cite}
+\usepackage{pdfpages}
+%\usepackage{listings}
+%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+%%%%%%%%%%%%%%%%%encadrementdes chapitres%%%%%%%%%%%%%%%%%%%%%%%
+\titleformat{\chapter} % commande de sectionnement affectée
+[frame] % une des formes prédéfinies
+{\itshape} % format appliqué au titre dans son ensemble
+{\filright\small\enspace Chapitre \thechapter\enspace} % format du « n° » du titre
+{8pt} % distance (horiz. ou vert.) entre le n° et le texte du titre
+{\Large\bfseries\filcenter} % format appliqué au texte du titre
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\title{Rapport Projet de programmation}
+%\author{Charlotte \textsc{Herice}\\ Typhaine \textsc{Paysan-Lafosse}\\ Thomas \textsc{Faux}\\ Joris \textsx{Sansen}}
+% Commenté car provoque une erreur lors de la compilation
+
+\begin{document}
+\input{./titre.tex}
+\thispagestyle{empty}
+
+\tableofcontents
+
+\thispagestyle{empty}
+
+\input{./intro.tex}
+
+\end{document}
