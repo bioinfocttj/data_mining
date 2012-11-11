@@ -1,8 +1,13 @@
 
-file = open('/home/typhaine/Documents/data_mining/P35443.xml','r')
+file = open('/home/aurelie/data_mining/1000prot.xml','r')
 file2 = open('test','w')
 
 for line in file :
+	print line
+	if '<entry' in line :
+		file2.write(line) #pour separer les proteines
+	if '</entry>' in line :
+		file2.write(line) 
 	if '<accession>' in line :
 		file2.write(line)
 	if '<name>' in line :
@@ -13,8 +18,7 @@ for line in file :
 		file2.write(line)
 	if '<keyword' in line :
 		file2.write(line)
-	if '<sequence' in line :
-		#line = file.next()
+	if '<sequence length' in line :
 		while '</sequence>' not in line:
 			file2.write(line)
 			line = file.next()
@@ -22,7 +26,23 @@ for line in file :
 	if '<subcellularLocation>' in line:
 		line = file.next()
 		if '<location>' in line:
-			print line
 			file2.write(line)
+	
+	if '<feature type="strand">' in line :   #structures secondaires
+		while '</feature>' not in line:
+			file2.write(line)
+			line = file.next()
+		file2.write(line)
+	if '<feature type="helix">' in line :   
+		while '</feature>' not in line:
+			file2.write(line)
+			line = file.next()
+		file2.write(line)
+	if '<feature type="turn">' in line :   
+		while '</feature>' not in line:
+			file2.write(line)
+			line = file.next()
+		file2.write(line)
+
 file.close()
 file2.close()
