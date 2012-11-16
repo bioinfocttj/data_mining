@@ -1,35 +1,13 @@
 import lxml.etree as etree
 
-file = open('echantillon.xml','r')
+file = open('echantillon_parse.xml','r')
 tree = etree.parse(file)
 root = tree.getroot()
 
 #------recup mots cles--------
-dico= {}
-for line in file :
-	if '<keyword' in line :
-		if line in dico.keys():
-			dico[line]+=1
-		else :
-	
-			dico[line]=1
-kw=[]
-cpt=0
-for key in dico.keys():
-	if dico[key]>=40:
-		cpt+=1		
-		kw.append(key)
-print cpt
 
-for i in range (len(kw)) :
-	tab = kw[i].split('">')
-	kw[i]=tab[1]
-	
-for i in range (len(kw)) :
-	tab = kw[i].split('</')
-	kw[i]=tab[0]
-	
-print kw
+kw = ['Cell adhesion', 'Transcription regulation', 'Repeat', 'RNA-binding', 'Developmental protein', 'Early protein', 'Zinc-finger', 'Cell division', 'Viral envelope protein', 'Protease', 'Transcription', 'Differentiation', 'Phosphoprotein', 'Immunoglobulin domain', 'Cell cycle', 'Reference proteome', 'Complete proteome', 'Viral nucleoprotein', '3D-structure', 'Ubl conjugation', 'Mitochondrion', 'Viral attachment to host cell', 'Polymorphism', 'Lipid metabolism', 'Ion transport', 'Nucleotidyltransferase', 'Methylation', 'Transferase', 'Acetylation', 'Ribonucleoprotein', 'Palmitate', 'Activator', 'Viral penetration into host cytoplasm', 'Cell membrane', 'Coiled coil', 'Secreted', 'G-protein coupled receptor', 'Ubl conjugation pathway', 'Olfaction', 'AIDS', 'Signal', 'Immunity', 'Transport', 'Inhibition of host interferon signaling pathway by virus', 'Host cell membrane', 'Apoptosis', 'Fusion of virus membrane with host endosomal membrane', 'Transit peptide', 'Host membrane', 'Sensory transduction', 'Cytoplasm', 'Signal-anchor', 'Membrane', 'Fusion of virus membrane with host membrane', 'Cell junction', 'Oxidoreductase', 'Repressor', 'Virion', 'Late protein', 'Myristate', 'Cytoskeleton', 'Calcium', 'Glycoprotein', 'Serine/threonine-protein kinase', 'Cell projection', 'Viral immunoevasion', 'Capsid protein', 'Nucleotide-binding', 'Protein transport', 'mRNA processing', 'Magnesium', 'Ionic channel', 'Receptor', 'Metal-binding', 'Transmembrane', 'DNA replication', 'Host cytoplasm', 'ATP-binding', 'Disease mutation', 'Viral RNA replication', 'Golgi apparatus', 'Kinase', 'Isopeptide bond', 'Transmembrane helix', 'Transducer', 'Inhibition of host innate immune response by virus', 'Disulfide bond', 'Zinc', 'Nucleus', 'Alternative splicing', 'Direct protein sequencing', 'Lipoprotein', 'Host nucleus', 'Hydrolase', 'Cleavage on pair of basic residues', 'Virus entry into host cell', 'Host-virus interaction', 'DNA-binding', 'Endoplasmic reticulum']
+
 
 
 
@@ -39,7 +17,6 @@ nb_strand = 0
 nb_turn = 0	
 nb_helix = 0
 for parent in tree.getiterator():
-	print parent
 	nb_strand = 0	
 	nb_turn = 0	
 	nb_helix = 0
@@ -65,6 +42,9 @@ for parent in tree.getiterator():
 for node in tree.getiterator():
 	if node.tag=='keyword':
 		if node.text not in kw :
+			#print node.text
 			node.getparent().remove(node)
+			
+
 tree.write("Test.xml")
-file.close()
+

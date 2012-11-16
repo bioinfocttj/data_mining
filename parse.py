@@ -1,9 +1,9 @@
 
-file = open('/net/cremi/tgauci/Documents/datamining/data_mining/echantillon.xml','r')
-file2 = open('test','w')
+file = open('/net/cremi/alelievr/espaces/travail/data_mining/echantillon.xml','r')
+file2 = open('echantillon_parse.xml','w')
 
+file2.write('<uniprot>')
 for line in file :
-	print line
 	if '<entry' in line :
 		file2.write(line) #pour separer les proteines
 	if '</entry>' in line :
@@ -44,5 +44,6 @@ for line in file :
 			line = file.next()
 		file2.write(line)
 
+file2.write('</uniprot>')
 file.close()
 file2.close()

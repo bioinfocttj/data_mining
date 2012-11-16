@@ -1,5 +1,5 @@
 
-file = open('echantillon.xml','r')
+file = open('echantillon_parse.xml','r')
 
 dico= {}
 for line in file :
@@ -25,5 +25,5 @@ for i in range (len(kw)) :
 	tab = kw[i].split('</')
 	kw[i]=tab[0]
 
-	
+print kw
 file.close()
