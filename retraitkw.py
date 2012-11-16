@@ -1,4 +1,4 @@
-file = open('test','r')
+file = open('test','r') #généré à l'exécution de parse.py
 file2 = open('echantillonkw.xml','w')
 file3 = open('listekw.txt','r')
 
