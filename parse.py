@@ -1,5 +1,5 @@
 
-file = open('/net/cremi/tgauci/Documents/datamining/data_mining/echantillon.xml','r')
+file = open('echantillon.xml','r')
 file2 = open('echantillon_parse.xml','w')
 
 file2.write('<uniprot>')
