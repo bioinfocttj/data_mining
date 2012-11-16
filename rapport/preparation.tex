@@ -1,14 +1,19 @@
 \section*{Choix et récupération des données}
+\addcontentsline{toc}{chapter}{Choix et récupération des données}
 
-Base de donnée uniprot\\ requete homo sapiens .....\\
-nombre de prot obtenu \\
-fichier XML 
+Afin de répondre à la problématique de départ, nous avons décidé de nous intéresser uniquement aux protéines humaines ayant été publiée, et plus particulièrement celle disponible sur la base de données \emph{uniprot}.
+
+En effet, la requête [\emph{(homo sapiens) AND reviewed:yes}] sur cette base de données permet d'obtenir 26,070 protéines, ce qui est suffisant pour obtenir des résultats exploitable sans que cela ne devienne trop chronophage en terme de temps de traitement et d'analyse.
+
+Nous récupérons donc les données sous formes de fichier XML nous permettant de lire et de traiter facilement les données (parse de fichier texte). Les balises propre au système xml (<balise> information <\textbackslash balise>) facilitant la récupération des données d'inter\^et.
+
 \section*{Préparation des données}
-
+\addcontentsline{toc}{chapter}{Préparation des données}
 La préparation des données est indispensable car les données récupérées peuvent être incomplètes, bruitées ou incohérentes. 
-Dans un premier temps, nous avons sélectionnés les critères que nous prendrons en compte dans notre analyse.
+Dans un premier temps, nous avons sélectionnés les critères que nous prendrons en compte dans notre analyse. 
 
 \subsection*{Critères}
+\addcontentsline{toc}{section}{Critères}
 \begin{itemize}
 \item nom et sequence (id)
 \item taille de la protéine
@@ -18,3 +23,4 @@ Dans un premier temps, nous avons sélectionnés les critères que nous prendron
 \end{itemize}
 
 \subsection*{Nettoyage}
+\addcontentsline{toc}{section}{Nettoyage}
