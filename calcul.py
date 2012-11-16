@@ -75,18 +75,31 @@ for node in tree.getiterator():
 	
 # -------calcul pourcentage aa hydrophobes ------		
 
-aa_hphobes =  ['G', 'A', 'V','L', 'I', 'F', 'W', 'Y']   # pas sure des mes sources 
+kd = { 'A': 1.8,'R':-4.5,'N':-3.5,'D':-3.5,'C': 2.5,
+'Q':-3.5,'E':-3.5,'G':-0.4,'H':-3.2,'I': 4.5,
+'L': 3.8,'K':-3.9,'M': 1.9,'F': 2.8,'P':-1.6,
+'S':-0.8,'T':-0.7,'W':-0.9,'Y':-1.3,'V': 4.2, 'X': 0, 'U': 0, 'B': 0, 'Z': 0}
 
-for node in tree.getiterator():
-	cpt_hphobe=0
-	if node.tag =='sequence':
-		sequence = node.text
-		for aa in sequence :
-			if aa in aa_hphobes :
-				cpt_hphobe+=1
-		length = float(node.attrib.get('length'))
-		pourcent_hphobe = cpt_hphobe / length * 100
-		node.attrib["hydrophobicity"] = str(round(pourcent_hphobe,1)) #  1 chiffre apres la virgule 
+#GRAVY: Grand average of hydropathicity index indicates the solubility of the proteins: 
+#positive GRAVY (hydrophobic), negative GRAVY (hydrophilic) (Kyte and Doolittle, 1982).
+
+# calculate the gravy according to kyte and doolittle.
+def Gravy(ProteinSequence):
+
+	if ProteinSequence.islower():
+		ProteinSequence = ProteinSequence.upper()
+
+	ProtGravy=0.0
+	for i in ProteinSequence:
+		ProtGravy += kd[i]
+
+	return ProtGravy/len(ProteinSequence)
+	
+for node in tree.findall('.//sequence') :
+	sequence = node.text  
+	sequence = sequence.replace('\n', '')
+	gravy = Gravy(sequence)
+	node.attrib["gravy"] = str(round(gravy,2))
 	
 # -------------calcul PHi-----------
 
