@@ -1,4 +1,3 @@
-import lxml.etree as etree
 
 file = open('echantillon.xml','r')
 
@@ -8,8 +7,8 @@ for line in file :
 		if line in dico.keys():
 			dico[line]+=1
 		else :
-	
 			dico[line]=1
+			
 kw=[]
 cpt=0
 for key in dico.keys():
@@ -25,6 +24,6 @@ for i in range (len(kw)) :
 for i in range (len(kw)) :
 	tab = kw[i].split('</')
 	kw[i]=tab[0]
+
 	
-print kw
 file.close()

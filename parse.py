@@ -1,5 +1,5 @@
 
-file = open('/net/cremi/alelievr/espaces/travail/data_mining/test2.xml','r')
+file = open('/net/cremi/tgauci/Documents/datamining/data_mining/echantillon.xml','r')
 file2 = open('test','w')
 
 for line in file :
