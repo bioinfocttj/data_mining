@@ -1,9 +1,9 @@
 
-file = open('echantillon.xml','r')
-file2 = open('echantillon_parse.xml','w')
+file = open('/net/stockage/bioinfo_promo_2011_2013/DataMining/homo_sapiens.xml','r')
+file2 = open('homo_parse.xml','w')
 
 file2.write('<uniprot>')
-print 'coucou'
+
 for line in file :
 	if '<entry' in line :
 		file2.write(line) #pour separer les proteines
