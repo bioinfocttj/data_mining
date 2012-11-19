@@ -10,17 +10,33 @@ Nous récupérons donc les données sous formes de fichier XML nous permettant d
 \section*{Préparation des données}
 \addcontentsline{toc}{chapter}{Préparation des données}
 La préparation des données est indispensable car les données récupérées peuvent être incomplètes, bruitées ou incohérentes. 
-Dans un premier temps, nous avons sélectionnés les critères que nous prendrons en compte dans notre analyse. 
-
-\subsection*{Critères}
-\addcontentsline{toc}{section}{Critères}
+Dans un premier temps, nous avons sélectionnés les critères que nous prendrons en compte dans notre analyse :
+\renewcommand\labelitemi{\textbullet}
 \begin{itemize}
-\item nom et sequence (id)
-\item taille de la protéine
-\item localisation 
-\item nombre de feuillets bêta, d'hélices alpha, de coudes
-\item keyword ??
+\item accession number (id)
+\item name/full name
+\item tissue
+\item sequence length
+\item gene - primary
+\item feature type ="strand  - helix - turn"
 \end{itemize}
+
+Cette récupération se fait grâce à un programme python que nous avons écrit nous permettant de "parser" les fichiers XML précédemment acquis.
+
+Nous obtenons ainsi des fichiers XML contenant uniquement les données que nous avons estimé nécéssaire au traitement du sujet.
+
+
+\pagebreak
+\subsection{Cluster}
+\begin{enumerate}
+\item conformation (nombre d'hélices et de feuillets)
+\item taille de la chaine (en nombre de acides aminés)
+\item localisation au niveau organe
+\item pourcentage d'hydrophobicité
+\item nombre de cystéines
+\item pHi
+\item gène codant la protéine
+\end{enumerate}
 
 \subsection*{Nettoyage}
 \addcontentsline{toc}{section}{Nettoyage}
