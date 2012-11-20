@@ -107,7 +107,7 @@ for parent in tree.findall('.//entry'):
     parent.append(helix)
     turn = etree.Element("turn")
     turn.attrib["nb"] = str(nb_turn)
-    turn.attrib["Pct"] = str(round(turnPct,2))
+    turn.attrib["pct"] = str(round(turnPct,2))
     parent.append(turn)
     
     
