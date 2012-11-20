@@ -1,4 +1,7 @@
 import lxml.etree as etree #parse XML
+import math
+from scipy import cluster
+from matplotlib.pyplot import show
 
 file = open('echcalc.xml','r')
 
@@ -51,8 +54,52 @@ for parent in tree.findall('.//entry'):
 # dico_struct = {id_prot : [nb_cystein,nb_strand,pct_strand,nb_helix,pct_helix,nb_turn,pct_turn]}
 # dico_chimie = {id_prot : [gravy,phi]}
 
+def init_matrix(d):   #creation matrice de distance de dimension d
+	matrix=[]
+	for i in range(d):
+		line=[]
+		for j in range(d):
+			line.append(0.0)
+		matrix.append(line)
+	return matrix
+ 
+def reduct_matrix(matrix):
+    # ramene toutes les valeurs d'une matrice entre 0 et 1,
+    # permet de faciliter la ponderation des matrices
+    red_matrix=init_matrix(len(matrix))
+    maxi=0
+    for i in range(len(matrix)):
+        for j in range(i+1,len(matrix)):
+            if matrix[i][j]>maxi:
+                maxi=matrix[i][j]
+    if maxi!=0:
+        for i in range(len(matrix)):
+            for j in range(i,len(matrix)):
+                red_dist=(matrix[i][j])/maxi
+                red_matrix[i][j]=red_dist
+                red_matrix[j][i]=red_dist
+    else:
+        red_matrix=matrix
+    return red_matrix 
+    
+def dist_length(a,b): # calcul distance 
+	dist = math.fabs(a-b)
+	return dist
 
-	
+matrix_length = init_matrix(len(dico_prot))
+list_id = []  #pour garder en memoire l'ordre des proteines dans la matrice
 
+for key in dico_prot :
+	list_id.append(key)
+i=0
+j=0		
+for i in range (len(matrix_length)):
+	a = dico_prot[list_id[i]][2]
+	for j in range (len(matrix_length)):
+		b = dico_prot[list_id[j]][2]
+		matrix_length[i][j] = dist_length(a,b)
+		
+matrix_red = reduct_matrix(matrix_length)	
 
+print matrix_red
 
