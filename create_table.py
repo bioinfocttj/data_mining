@@ -1,5 +1,8 @@
 import lxml.etree as etree #parse XML
 import math
+from scipy import cluster
+from matplotlib.pyplot import show
+
 
 
 file = open('echcalc.xml','r')
@@ -108,7 +111,7 @@ for key1 in dico_prot.keys():
 	
 
 
-matrix_red = reduct_matrix(matrix_length)	
+#matrix_red = reduct_matrix(matrix_length)	
 
 #---- tests ----
 """
@@ -137,5 +140,11 @@ while  (len(cluster))!=0:
 """
 
 
+Y =  cluster.hierarchy.linkage(matrix_length,method='complete')
 
-matrix_red
+#Coupage de l'arbre -> recuperation des clusters
+
+
+
+Z = cluster.hierarchy.dendrogram(Y,p=10,truncate_mode='lastp')
+show()
