@@ -3,53 +3,53 @@ import math
 from scipy import cluster
 from matplotlib.pyplot import show
 
+def create_table(file):
 
+	file = open(file,'r')
 
-file = open('echcalc.xml','r')
+	tree = etree.parse(file)
 
-tree = etree.parse(file)
+	dico_prot = {} # dictionnaire correspondant a la table des proteines
+	dico_struct = {} # dictionnaire correspondant a la table des structures
+	dico_chimie = {} # dictionnaire correspondant a la table des proprietes chimiques
 
-dico_prot = {} # dictionnaire correspondant a la table des proteines
-dico_struct = {} # dictionnaire correspondant a la table des structures
-dico_chimie = {} # dictionnaire correspondant a la table des proprietes chimiques
-
-for parent in tree.findall('.//entry'):
-	nb_gene = 0
-	list_tissue=[]
-	for child in parent :
-		if child.tag == 'accession':
-			id_prot = child.text
-			dico_prot[id_prot]={'fullname':0,'gene':0,'length':0,'tissue':0}
-			dico_struct[id_prot]={'nb_cystein':0,'nb_strand':0,'pct_strand':0,'nb_helix':0,'pct_helix':0,'nb_turn':0,'pct_turn':0}
-			dico_chimie[id_prot]={'gravy':0,'phi':0}
-		if child.tag=='fullName':
-			dico_prot[id_prot]['fullname'] = child.text
-		if child.tag=='tissue':
-			list_tissue.append(child.text)
-		if child.tag =='sequence':
-			dico_prot[id_prot]['length']=float(child.attrib['length'])
-			dico_chimie[id_prot]['gravy']=float(child.attrib['gravy'])
-			dico_chimie[id_prot]['phi']=float(child.attrib['phi'])
-			dico_struct[id_prot]['nb_cystein']=float(child.attrib['cysteine'])
-		if child.tag == 'gene':
-			nb_gene+=1
-			if len(child.getchildren())>0:
-				dico_prot[id_prot]['gene']=child.getchildren()[0].text
-			else :
-				dico_prot[id_prot]['gene']='NOGENE'
-		if child.tag == 'strand' :
-			dico_struct[id_prot]['nb_strand']=float(child.attrib['nb'])
-			dico_struct[id_prot]['pct_strand']=float(child.attrib['pct'])
-		if child.tag == 'helix' :
-			dico_struct[id_prot]['nb_helix']=float(child.attrib['nb'])
-			dico_struct[id_prot]['pct_helix']=float(child.attrib['pct'])
-		if child.tag == 'turn' :
-			dico_struct[id_prot]['nb_turn']=float(child.attrib['nb'])
-			dico_struct[id_prot]['pct_turn']=float(child.attrib['pct'])
-	if nb_gene == 0 :
-		dico_prot[id_prot]['gene']='NOGENE'
-	dico_prot[id_prot]['tissue']=list_tissue
-
+	for parent in tree.findall('.//entry'):
+		nb_gene = 0
+		list_tissue=[]
+		for child in parent :
+			if child.tag == 'accession':
+				id_prot = child.text
+				dico_prot[id_prot]={'fullname':0,'gene':0,'length':0,'tissue':0}
+				dico_struct[id_prot]={'nb_cystein':0,'nb_strand':0,'pct_strand':0,'nb_helix':0,'pct_helix':0,'nb_turn':0,'pct_turn':0}
+				dico_chimie[id_prot]={'gravy':0,'phi':0}
+			if child.tag=='fullName':
+				dico_prot[id_prot]['fullname'] = child.text
+			if child.tag=='tissue':
+				list_tissue.append(child.text)
+			if child.tag =='sequence':
+				dico_prot[id_prot]['length']=float(child.attrib['length'])
+				dico_chimie[id_prot]['gravy']=float(child.attrib['gravy'])
+				dico_chimie[id_prot]['phi']=float(child.attrib['phi'])
+				dico_struct[id_prot]['nb_cystein']=float(child.attrib['cysteine'])
+			if child.tag == 'gene':
+				nb_gene+=1
+				if len(child.getchildren())>0:
+					dico_prot[id_prot]['gene']=child.getchildren()[0].text
+				else :
+					dico_prot[id_prot]['gene']='NOGENE'
+			if child.tag == 'strand' :
+				dico_struct[id_prot]['nb_strand']=float(child.attrib['nb'])
+				dico_struct[id_prot]['pct_strand']=float(child.attrib['pct'])
+			if child.tag == 'helix' :
+				dico_struct[id_prot]['nb_helix']=float(child.attrib['nb'])
+				dico_struct[id_prot]['pct_helix']=float(child.attrib['pct'])
+			if child.tag == 'turn' :
+				dico_struct[id_prot]['nb_turn']=float(child.attrib['nb'])
+				dico_struct[id_prot]['pct_turn']=float(child.attrib['pct'])
+		if nb_gene == 0 :
+			dico_prot[id_prot]['gene']='NOGENE'
+		dico_prot[id_prot]['tissue']=list_tissue
+	return dico_prot,dico_struct,dico_chimie
 
 
 # dico_prot = {id_prot : [fullname,gene,length,[list tissue]]}
@@ -58,7 +58,7 @@ for parent in tree.findall('.//entry'):
 
 
 
-
+dico_prot,dico_struct,dico_chimie = create_table('echantillon_final.xml')
 
 #---------- Calcul matrice de distance length + cluster -----------------
 
@@ -97,7 +97,7 @@ def dist_length(a,b): # calcul distance
 
 matrix_length = init_matrix(len(dico_prot))
 
-#---- remplissage de la matrice ----
+#---- remplissage de la matrice il faut ajouter les id des proteines  ----
 i=0
 j=0
 for key1 in dico_prot.keys():
@@ -140,11 +140,4 @@ while  (len(cluster))!=0:
 """
 
 
-Y =  cluster.hierarchy.linkage(matrix_length,method='complete')
 
-#Coupage de l'arbre -> recuperation des clusters
-
-
-
-Z = cluster.hierarchy.dendrogram(Y,p=10,truncate_mode='lastp')
-show()
