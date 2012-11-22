@@ -1,3 +1,8 @@
+import lxml.etree as etree #parse XML
+import sys
+sys.path.append('/net/cremi/tgauci/Documents/datamining/data_mining/biopython160/')
+from Bio.SeqUtils import ProtParam
+
 
 file = open('/net/stockage/bioinfo_promo_2011_2013/DataMining/homo_sapiens.xml','r')
 file2 = open('homo_parse.xml','w')
