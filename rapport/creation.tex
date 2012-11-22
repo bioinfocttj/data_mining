@@ -5,17 +5,20 @@
 
 \addcontentsline{toc}{section}{Choix et récupération des données}
 
-Afin de répondre à la problématique de départ, nous avons décidé de nous intéresser uniquement aux protéines humaines ayant été publiée, et plus particulièrement celle disponible sur la base de données \emph{uniprot}.
+Afin de répondre à la problématique de départ, nous avons décidé de nous intéresser uniquement aux protéines humaines ayant été publiées, et plus particulièrement à celles disponibles sur la base de données \emph{uniprot}.
 
-En effet, la requête [\emph{(homo sapiens) AND reviewed:yes}] sur cette base de données permet d'obtenir 26,070 protéines, ce qui est suffisant pour obtenir des résultats exploitable sans que cela ne devienne trop chronophage en terme de temps de traitement et d'analyse.
+En effet, la requête [\emph{(homo sapiens) AND reviewed:yes}] sur cette base de données permet d'obtenir 26070 protéines, ce qui est suffisant pour obtenir des résultats exploitables sans que cela ne devienne trop chronophage en terme de temps de traitement et d'analyse.
 
-Nous récupérons donc les données sous formes de fichier XML nous permettant de lire et de traiter facilement les données (parse de fichier texte). Les balises propre au système xml (<balise> information <\textbackslash balise>) facilitant la récupération des données d'inter\^et.
+Nous récupérons donc les données sous la forme d'un fichier XML nous permettant de lire et de traiter facilement les données (parse de fichier texte). Les balises propres au système xml (<balise> information <\textbackslash balise>) facilitant la récupération des données d'inter\^et.
 
 \subsection*{Préparation des données}
 
 \addcontentsline{toc}{section}{Préparation des données}
 La préparation des données est indispensable car les données récupérées peuvent être incomplètes, bruitées ou incohérentes. 
-Dans un premier temps, nous avons sélectionnés les critères que nous prendrons en compte dans notre analyse :
+
+\subsubsection*{Nettoyage}
+\addcontentsline{toc}{subsection}{Nettoyage}
+Dans un premier temps, nous avons sélectionné les critères que nous prendrons en compte dans notre analyse :
 \renewcommand\labelitemi{\textbullet}
 \begin{itemize}
 \item accession number (id)
@@ -23,26 +26,32 @@ Dans un premier temps, nous avons sélectionnés les critères que nous prendron
 \item tissue
 \item sequence length
 \item gene - primary
-\item feature type ="strand  - helix - turn"
+\item feature type ="strand  - helix - turn"\\
 \end{itemize}
 
-Cette récupération se fait grâce à un programme python que nous avons écrit nous permettant de "parser" les fichiers XML précédemment acquis.
-
-Nous obtenons ainsi des fichiers XML contenant uniquement les données que nous avons estimé nécéssaire au traitement du sujet.
+Cette récupération se fait grâce à un programme python que nous avons écrit nous permettant de "parser" le fichier XML précédemment acquis.\\
+Nous obtenons ainsi un fichier XML contenant uniquement les données que nous avons estimé nécéssaires au traitement du sujet.\\
+Nous avons également ajouté des données au fichier précédent qui vont nous permettre de créer les cluster par la suite. Il s'agit de:
+\begin{itemize}
+\item Le nombre d'hélices, de feuillets et de coudes dans la protéine qui a permis de calculer pourcentage des hélices, feuillets ou coudes par rapport à la taille de la protéine.
+\item Le pourcentage d'hydrophobicité qui a été calculé gr\^ace à la méthode GRAVY.
+\item Le pHi (point isoélectrique) qui a été déterminé à l'aide de la fonction \texttt{isoelectric\_point()} présente dans BioPython.
+\item Le nombre de cystéines au niveau desquelles se forment les ponts disulfures qui interviennent dans la conformation 3D des protéines.
+\end{itemize}
 
 \pagebreak
 \subsubsection*{Cluster}
 \addcontentsline{toc}{subsection}{Cluster}
-
+Nous avons choisi de réaliser un clustering hierarchique car l'attribution de scores aux protéines de le cas du clustering par scores nous paraissait fastidieuse.\\
+Ainsi, nous avons choisi 7 niveaux de clusterisation:
 \begin{enumerate}
-\item conformation (nombre d'hélices et de feuillets)
-\item taille de la chaine (en nombre de acides aminés)
-\item localisation au niveau organe
-\item pourcentage d'hydrophobicité
-\item nombre de cystéines
+\item Conformation (nombre d'hélices et de feuillets)
+\item Taille de la chaine (en nombre de acides aminés)
+\item Localisation au niveau organe
+\item Pourcentage d'hydrophobicité
+\item Nombre de cystéines
 \item pHi
-\item gène codant la protéine
+\item Gène codant la protéine
 \end{enumerate}
 
-\subsubsection*{Nettoyage}
-\addcontentsline{toc}{subsection}{Nettoyage}
+
