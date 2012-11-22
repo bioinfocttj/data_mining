@@ -4,6 +4,7 @@ file2 = open('echantillon.xml','w')
 
 cpt=0
 cpt2=0
+file2.write('<uniprot>')
 for line in file :
 	if '<entry' in line :
 		if cpt%10==0:
@@ -14,5 +15,6 @@ for line in file :
 			cpt2+=1
 		cpt+=1
 		
+file2.write('</uniprot>')		
 print "CPT :" , cpt2
 print "CPT prot :" , cpt
