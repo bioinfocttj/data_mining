@@ -121,11 +121,13 @@ def remplir_matrice(matrice,i,j,cluster): #fusion valeurs i et j
 	for ligne in range (len(matrice)):
 		for k in range(len(matrix[0])):
 			if matrix[0][k]==matrice[0][ligne]:
+				print matrice[0][ligne]
 				for l in range (1,len(matrix)):
 #############################################################################################################################
-				#	print "test2",matrix[0][l]																				#
+					#print "test2",matrix[0][l][0]																			#
 				#	print "i",i[0]																							#
-					if (i[0]==matrix[0][l][0]):																				#
+					if i[0]==matrix[0][l][0]:
+						print "ok"																							#
 						matrix[0][k]=(matrice[l][ligne]+matrice[l][ligne])/2#calcul ou if foireux, matrice resultat vide	#
 						matrix[k][0]=(matrice[l][ligne]+matrice[l][ligne])/2												#
 	return matrix																											#
@@ -164,5 +166,5 @@ mat=ajout_identifiant(clust1,matrix_length)
 mat=remplir_matrice_initiale(dico_prot,mat)
 savI,savJ=mini(mat)
 mat2=remplir_matrice(mat,savI,savJ,clust1)
-print mat2
+#print mat2
 
