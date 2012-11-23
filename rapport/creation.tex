@@ -18,40 +18,72 @@ La préparation des données est indispensable car les données récupérées pe
 
 \subsubsection*{Nettoyage}
 \addcontentsline{toc}{subsection}{Nettoyage}
-Dans un premier temps, nous avons sélectionné les critères que nous prendrons en compte dans notre analyse :
+Dans un premier temps, nous avons sélectionné les balises correspondantes aux critères que nous prendrons en compte dans notre analyse :
 \renewcommand\labelitemi{\textbullet}
 \begin{itemize}
 \item accession number (id)
 \item name/full name
 \item tissue
 \item sequence length
-\item gene - primary
 \item feature type ="strand  - helix - turn"\\
 \end{itemize}
 
 Cette récupération se fait grâce à un programme python que nous avons écrit nous permettant de "parser" le fichier XML précédemment acquis.\\
-Nous obtenons ainsi un fichier XML contenant uniquement les données que nous avons estimé nécéssaires au traitement du sujet.\\
-Nous avons également ajouté des données au fichier précédent qui vont nous permettre de créer les cluster par la suite. Il s'agit de:
+
+Ce script comporte deux parties, nous supprimons d'abord les balises qui ne sont pas utiles pour notre étude.
+Nous ajoutons ensuite des données calculées au fichier précédent qui vont nous permettre de créer les clusters par la suite. Il s'agit de:
 \begin{itemize}
-\item Le nombre d'hélices, de feuillets et de coudes dans la protéine qui a permis de calculer pourcentage des hélices, feuillets ou coudes par rapport à la taille de la protéine.
-\item Le pourcentage d'hydrophobicité qui a été calculé gr\^ace à la méthode GRAVY.
+\item Le nombre et le pourcentage d'hélices, de feuillets et de coudes dans la protéine.
+\item Le pourcentage d'hydrophobicité.
 \item Le pHi (point isoélectrique) qui a été déterminé à l'aide de la fonction \texttt{isoelectric\_point()} présente dans BioPython.
-\item Le nombre de cystéines au niveau desquelles se forment les ponts disulfures qui interviennent dans la conformation 3D des protéines.
+\item Le nombre de cystéines.
 \end{itemize}
 
-\pagebreak
+Nous avons également supprimé les informations dupliquées (identifiants, noms etc).
+Enfin nous avons remarqué que certaines protéines n'étaient pas des protéines humaines mais appartenaient à des virus, nous les avons donc supprimé.
+
+Nous obtenons ainsi un fichier XML contenant uniquement les données que nous avons e
+
+
 \subsubsection*{Cluster}
 \addcontentsline{toc}{subsection}{Cluster}
 Nous avons choisi de réaliser un clustering hierarchique car l'attribution de scores aux protéines de le cas du clustering par scores nous paraissait fastidieuse.\\
 Ainsi, nous avons choisi 7 niveaux de clusterisation:
 \begin{enumerate}
-\item Conformation (nombre d'hélices et de feuillets)
 \item Taille de la chaine (en nombre de acides aminés)
+\item Conformation (nombre d'hélices, de feuillets, de coudes et de cystéines)
 \item Localisation au niveau organe
 \item Pourcentage d'hydrophobicité
-\item Nombre de cystéines
 \item pHi
-\item Gène codant la protéine
 \end{enumerate}
 
+
+\subsubsection*{Taille de la chaîne}
+Les protéines sont constitués d'une succession d'acides aminés reliés entre eux par des liaisons peptidiques. La taille d'une protéine correspond au nombre d'acides aminés qu'elle contient. La taille des protéines est très variable, des protéines ayant des tailles très différentes n'auront pas les m\^emes proriétés.
+
+Pour déterminer la distance entre deux protéines, nous calculons la distance de Manhattan.
+
+
+
+\subsubsection*{Localisation}
+
+\subsubsection*{Conformation}
+Une protéine peut être décrite par un enchaînement de structures secondaires (hélices alpha, feuillets beta et coude) qui ont une influence sur son repliement. 
+
+\subsubsection*{Nombre de cystéine}
+Les ponts disulfures se forment au sein d'une protéine entre deux cystéines et créent des liaisons inter-chaines. 
+
+
+\subsubsection*{Hydrophobicité}
+L'hydrophobicité d'une protéine est déterminée à partir du nombre d'acides aminés hydrophobes qu'elle possède.
+Nous avons calculé un index d'hydrophobicité (GRAVY: Grand average of hydropathicity index,Kyte and Doolittle) qui indique la solubilité d'une protéine. Si la valeur est positive, la protéine est hydrophobe, sinon elle est hydrophile.
+Son caractère hydrophobe ou hydrophile influence :
+\begin{itemize}
+\item sa localisation au niveau cellulaire (cytoplasme ou membrane)
+\item son repliement (acides aminés hydrophobes à l'intérieur ou l'extérieur de la protéine selon sa localisation cellulaire) 
+\end{itemize}
+
+\subsubsection*{pHi}
+Le pHi est le pH isoéléctrique d'une protéine, c'est à dire le pH auquel cette protéine a une charge nulle.
+Au dessus de ce pH, la protéine est chargée négativement et inversement.
 
