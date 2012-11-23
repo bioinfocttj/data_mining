@@ -1,7 +1,7 @@
 import lxml.etree as etree #parse XML
 import math
-from scipy import cluster
-from matplotlib.pyplot import show
+#from scipy import cluster
+#from matplotlib.pyplot import show
 
 def create_table(file):
 
@@ -70,74 +70,45 @@ def init_matrix(d):   #creation matrice de distance de dimension d
 			line.append(0.0)
 		matrix.append(line)
 	return matrix
- 
-def reduct_matrix(matrix):
-    # ramene toutes les valeurs d'une matrice entre 0 et 1,
-    # permet de faciliter la ponderation des matrices
-    red_matrix=init_matrix(len(matrix))
-    maxi=0
-    for i in range(len(matrix)):
-        for j in range(i+1,len(matrix)):
-            if matrix[i][j]>maxi:
-                maxi=matrix[i][j]
-    if maxi!=0:
-        for i in range(len(matrix)):
-            for j in range(i,len(matrix)):
-                red_dist=(matrix[i][j])/maxi
-                red_matrix[i][j]=red_dist
-                red_matrix[j][i]=red_dist
-    else:
-        red_matrix=matrix
-    return red_matrix 
 
 def dist_length(a,b): # calcul distance 
 	dist = math.fabs(a-b)
 	return dist
 
 
-matrix_length = init_matrix(len(dico_prot))
+matrix_length = init_matrix(len(dico_prot)+1)
 
-#---- remplissage de la matrice il faut ajouter les id des proteines  ----
-i=0
-j=0
-for key1 in dico_prot.keys():
+#---- remplissage de la matrice ----
+
+ligne = 1
+for key in dico_prot.keys():#ajout des identifiants ds la 1ere ligne et 1ere colonne de la matrice de distance
+	matrix_length[0][ligne]=key
+	matrix_length[ligne][0]=key
+	ligne+=1
+
+for i in range (1,len(matrix_length)):
+	key1=matrix_length[0][i]
 	a = dico_prot[key1]['length']
-	for key2 in dico_prot.keys():
+	for j in range (1,len(matrix_length)):
+		key2=matrix_length[j][0]
 		b = dico_prot[key2]['length']
 		matrix_length[i][j] = dist_length(a,b)
-		j+=1
-	i+=1
-	j=0
-	
 
+def min(matrix_length):
+	savI=1
+	savJ=2
+	x=2
+	mini=matrix_length[1][2]
+	for i in range (x,len(matrix_length)):
+		for j in range (1,len(matrix_length)):
+			if matrix_length[i][j]<mini:
+				mini=matrix_length[i][j]
+				savI=i
+				savJ=j
+		x+=1
+	return savI,savJ
 
-#matrix_red = reduct_matrix(matrix_length)	
-
-#---- tests ----
-"""
-step_cluster =[] #contient toutes les etapes de clusterisation
-cluster = [] # cluster en cours
-
-# toutes les proteines sont dans un seul cluster
-for key in dic_prot :
-	cluster.append(key)
-	
-step_cluster.append(cluster) #ajout premiere etape
-i=0
-j=0
-
-while  (len(cluster))!=0:
-	d=0
-	for key1 in dico_prot.keys():
-		for key2 in range dico_prot.keys():
-			j+=1
-			if matrix_red[i][j]>d
-			d = matrix_red[i][j]
-			p1_id = dico_prot[key1]
-			p2_id = dico_prot[key2]
-	i+=1
-	j=0
-"""
-
-
-
+def matrice_distance(matrice,i,j):
+	matrix = init_matrix(len(matrice)-1)
+	for ligne in range (len(matrice)):
+		matrix[][]=(matrice[i][ligne]+matrice[j][ligne])/2
