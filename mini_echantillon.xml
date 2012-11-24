@@ -1,0 +1,558 @@
+<uniprot><entry dataset="Swiss-Prot" created="1993-07-01" modified="2012-10-03" version="146">
+<accession>P31946</accession>
+<fullName>14-3-3 protein beta/alpha</fullName>
+<gene>
+<name type="primary">YWHAB</name>
+</gene>
+<name type="scientific">Homo sapiens</name>
+<tissue>Keratinocyte</tissue>
+<tissue>Thymus</tissue>
+<tissue>Skin</tissue>
+<tissue>Colon carcinoma</tissue>
+<tissue>Platelet</tissue>
+<tissue>Melanoma</tissue>
+<tissue>Embryonic kidney</tissue>
+<feature type="helix">
+<location>
+<begin position="5"/>
+<end position="17"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="21"/>
+<end position="33"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="40"/>
+<end position="69"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="75"/>
+<end position="105"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="107"/>
+<end position="110"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="114"/>
+<end position="133"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="139"/>
+<end position="161"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="167"/>
+<end position="182"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="187"/>
+<end position="202"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="203"/>
+<end position="207"/>
+</location>
+</feature>
+<feature type="turn">
+<location>
+<begin position="210"/>
+<end position="212"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="213"/>
+<end position="232"/>
+</location>
+</feature>
+<sequence length="246" mass="28082" checksum="6BE1A9BF97468017" modified="2007-01-23" version="3" gravy="-0.73" cysteine="2" phi="4.76">
+MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSS
+WRVISSIEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFY
+LKMKGDYFRYLSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFY
+YEILNSPEKACSLAKTAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGD
+AGEGEN
+</sequence>
+<strand nb="0" pct="0.0"/><helix nb="11" pct="73.17"/><turn nb="1" pct="0.81"/></entry>
+<entry dataset="Swiss-Prot" created="1990-01-01" modified="2012-10-03" version="113">
+<accession>P13746</accession>
+<fullName>HLA class I histocompatibility antigen, A-11 alpha chain</fullName>
+<gene>
+<name type="primary">HLA-A</name>
+</gene>
+<name type="scientific">Homo sapiens</name>
+<tissue>Blood</tissue>
+<feature type="strand">
+<location>
+<begin position="27"/>
+<end position="36"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="41"/>
+<end position="43"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="45"/>
+<end position="52"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="55"/>
+<end position="61"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="64"/>
+<end position="66"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="74"/>
+<end position="76"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="81"/>
+<end position="108"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="113"/>
+<end position="115"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="118"/>
+<end position="127"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="133"/>
+<end position="142"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="145"/>
+<end position="150"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="157"/>
+<end position="159"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="162"/>
+<end position="173"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="176"/>
+<end position="185"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="187"/>
+<end position="198"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="200"/>
+<end position="203"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="210"/>
+<end position="217"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="219"/>
+<end position="235"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="238"/>
+<end position="243"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="246"/>
+<end position="248"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="252"/>
+<end position="254"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="261"/>
+<end position="263"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="265"/>
+<end position="274"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="278"/>
+<end position="280"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="281"/>
+<end position="286"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="288"/>
+<end position="292"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="294"/>
+<end position="297"/>
+</location>
+</feature>
+<sequence length="365" mass="40937" checksum="FE449CE2D4BF6CC5" modified="1990-01-01" version="1" precursor="true" gravy="-0.54" cysteine="5" phi="5.77">
+MAVMAPRTLLLLLSGALALTQTWAGSHSMRYFYTSVSRPGRGEPRFIAVGYVDDTQFVRF
+DSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEDGSHTIQ
+IMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHAAEQQ
+RAYLEGRCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLT
+WQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEL
+SSQPTIPIVGIIAGLVLLGAVITGAVVAAVMWRRKSSDRKGGSYTQAASSDSAQGSDVSL
+TACKV
+</sequence>
+<strand nb="20" pct="29.59"/><helix nb="7" pct="17.81"/><turn nb="0" pct="0.0"/></entry>
+<entry dataset="Swiss-Prot" created="1989-07-01" modified="2012-10-03" version="113">
+<accession>P10314</accession>
+<fullName>HLA class I histocompatibility antigen, A-32 alpha chain</fullName>
+<gene>
+<name type="primary">HLA-A</name>
+</gene>
+<name type="scientific">Homo sapiens</name>
+<tissue>Blood</tissue>
+<sequence length="365" mass="41048" checksum="BF7AF225329E0319" modified="1995-11-01" version="2" precursor="true" gravy="-0.51" cysteine="5" phi="6.02">
+MAVMAPRTLLLLLLGALALTQTWAGSHSMRYFFTSVSRPGRGEPRFIAVGYVDDTQFVRF
+DSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAHSQTDRESLRIALRYYNQSEAGSHTIQ
+MMYGCDVGPDGRLLRGYQQDAYDGKDYIALNEDLRSWTAADMAAQITQRKWEAARVAEQL
+RAYLEGTCVEWLRRYLENGKETLQRTDAPKTHMTHHAVSDHEATLRCWALSFYPAEITLT
+WQRDGEDQTQDTELVETRPAGDGTFQKWASVVVPSGQEQRYTCHVQHEGLPKPLTLRWEP
+SSQPTIPIVGIIAGLVLFGAMFAGAVVAAVRWRRKSSDRKGGSYSQAASSDSAQGSDMSL
+TACKV
+</sequence>
+<strand nb="0" pct="0.0"/><helix nb="0" pct="0.0"/><turn nb="0" pct="0.0"/></entry>
+<entry dataset="Swiss-Prot" created="1986-07-21" modified="2012-10-03" version="135">
+<accession>P01889</accession>
+<fullName>HLA class I histocompatibility antigen, B-7 alpha chain</fullName>
+<gene>
+<name type="primary">HLA-B</name>
+</gene>
+<name type="scientific">Homo sapiens</name>
+<tissue>Blood</tissue>
+<tissue>Subthalamic nucleus</tissue>
+<tissue>Peripheral blood</tissue>
+<tissue>Liver</tissue>
+<sequence length="362" mass="40460" checksum="5E5A7BDE031403D6" modified="1991-02-01" version="3" precursor="true" gravy="-0.56" cysteine="6" phi="5.57">
+MLVMAPRTVLLLLSAALALTETWAGSHSMRYFYTSVSRPGRGEPRFISVGYVDDTQFVRF
+DSDAASPREEPRAPWIEQEGPEYWDRNTQIYKAQAQTDRESLRNLRGYYNQSEAGSHTLQ
+SMYGCDVGPDGRLLRGHDQYAYDGKDYIALNEDLRSWTAADTAAQITQRKWEAAREAEQR
+RAYLEGECVEWLRRYLENGKDKLERADPPKTHVTHHPISDHEATLRCWALGFYPAEITLT
+WQRDGEDQTQDTELVETRPAGDRTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP
+SSQSTVPIVGIVAGLAVLAVVVIGAVVAAVMCRRKSSGGKGGSYSQAACSDSAQGSDVSL
+TA
+</sequence>
+<strand nb="0" pct="0.0"/><helix nb="0" pct="0.0"/><turn nb="0" pct="0.0"/></entry>
+<entry dataset="Swiss-Prot" created="1993-04-01" modified="2012-10-03" version="108">
+<accession>P30475</accession>
+<fullName>HLA class I histocompatibility antigen, B-39 alpha chain</fullName>
+<gene>
+<name type="primary">HLA-B</name>
+</gene>
+<name type="scientific">Homo sapiens</name>
+<tissue>Peripheral blood</tissue>
+<tissue>Blood</tissue>
+<sequence length="362" mass="40328" checksum="422698063DEAB039" modified="1993-04-01" version="1" precursor="true" gravy="-0.51" cysteine="6" phi="5.77">
+MLVMAPRTVLLLLSAALALTETWAGSHSMRYFYTSVSRPGRGEPRFISVGYVDDTQFVRF
+DSDAASPREEPRAPWIEQEGPEYWDRNTQICKTNTQTDRESLRNLRGYYNQSEAGSHTLQ
+RMYGCDVGPDGRLLRGHNQFAYDGKDYIALNEDLSSWTAADTAAQITQRKWEAARVAEQL
+RTYLEGTCVEWLRRYLENGKETLQRADPPKTHVTHHPISDHEATLRCWALGFYPAEITLT
+WQRDGEDQTQDTELVETRPAGDRTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP
+SSQSTVPIVGIVAGLAVLAVVVIGAVVAAVMCRRKSSGGKGGSYSQAASSDSAQGSDVSL
+TA
+</sequence>
+<strand nb="0" pct="0.0"/><helix nb="0" pct="0.0"/><turn nb="0" pct="0.0"/></entry>
+<entry dataset="Swiss-Prot" created="1993-04-01" modified="2012-10-03" version="102">
+<accession>P30488</accession>
+<fullName>HLA class I histocompatibility antigen, B-50 alpha chain</fullName>
+<gene>
+<name type="primary">HLA-B</name>
+</gene>
+<name type="scientific">Homo sapiens</name>
+<tissue>Blood</tissue>
+<sequence length="362" mass="40541" checksum="729B0736F81C4AB4" modified="1993-04-01" version="1" precursor="true" gravy="-0.55" cysteine="5" phi="6.03">
+MRVTAPRTVLLLLSAALALTETWAGSHSMRYFHTAMSRPGRGEPRFITVGYVDDTLFVRF
+DSDATSPRKEPRAPWIEQEGPEYWDRETQISKTNTQTYRESLRNLRGYYNQSEAGSHTWQ
+RMYGCDLGPDGRLLRGYNQLAYDGKDYIALNEDLSSWTAADTAAQITQRKWEAAREAEQL
+RAYLEGLCVEWLRRYLENGKETLQRADPPKTHVTHHPISDHEATLRCWALGFYPAEITLT
+WQRDGEDQTQDTELVETRPAGDRTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP
+SSQSTIPIVGIVAGLAVLAVVVIGAVVATVMCRRKSSGGKGGSYSQAASSDSAQGSDVSL
+TA
+</sequence>
+<strand nb="0" pct="0.0"/><helix nb="0" pct="0.0"/><turn nb="0" pct="0.0"/></entry>
+<entry dataset="Swiss-Prot" created="2003-08-22" modified="2012-10-03" version="102">
+<accession>Q29836</accession>
+<fullName>HLA class I histocompatibility antigen, B-67 alpha chain</fullName>
+<gene>
+<name type="primary">HLA-B</name>
+</gene>
+<name type="scientific">Homo sapiens</name>
+<tissue>Blood</tissue>
+<sequence length="362" mass="40342" checksum="3F6A17FC10230F70" modified="1996-11-01" version="1" precursor="true" gravy="-0.5" cysteine="5" phi="5.77">
+MLVMAPRTVLLLLSAALALTETWAGSHSMRYFYTSVSRPGRGEPRFISVGYVDDTQFVRF
+DSDAASPREEPRAPWIEQEGPEYWDRNTQIYKAQAQTDRESLRNLRGYYNQSEAGSHTLQ
+RMYGCDVGPDGRLLRGHNQFAYDGKDYIALNEDLSSWTAADTAAQITQRKWEAARVAEQL
+RTYLEGTCVEWLRRYLENGKETLQRADPPKTHVTHHPISDHEATLRCWALGFYPAEITLT
+WQRDGEDQTQDTELVETRPAGDRTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP
+SSQSTVPIVGIVAGLAVLAVVVIGAVVAAVMCRRKSSGGKGGSYSQAASSDSAQGSDVSL
+TA
+</sequence>
+<strand nb="0" pct="0.0"/><helix nb="0" pct="0.0"/><turn nb="0" pct="0.0"/></entry>
+<entry dataset="Swiss-Prot" created="2003-08-22" modified="2012-10-03" version="107">
+<accession>Q29963</accession>
+<fullName>HLA class I histocompatibility antigen, Cw-6 alpha chain</fullName>
+<gene>
+<name type="primary">HLA-C</name>
+</gene>
+<name type="scientific">Homo sapiens</name>
+<tissue>Blood</tissue>
+<sequence length="366" mass="40969" checksum="45876CB22256DE80" modified="2003-08-22" version="2" precursor="true" gravy="-0.57" cysteine="8" phi="5.68">
+MRVMAPRTLILLLSGALALTETWACSHSMRYFDTAVSRPGRGEPRFISVGYVDDTQFVRF
+DSDAASPRGEPRAPWVEQEGPEYWDRETQKYKRQAQADRVNLRKLRGYYNQSEDGSHTLQ
+WMYGCDLGPDGRLLRGYDQSAYDGKDYIALNEDLRSWTAADTAAQITQRKWEAAREAEQW
+RAYLEGTCVEWLRRYLENGKETLQRAEHPKTHVTHHPVSDHEATLRCWALGFYPAEITLT
+WQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPEPLTLRWEP
+SSQPTIPIVGIVAGLAVLAVLAVLGAVMAVVMCRRKSSGGKGGSCSQAASSNSAQGSDES
+LIACKA
+</sequence>
+<strand nb="0" pct="0.0"/><helix nb="0" pct="0.0"/><turn nb="0" pct="0.0"/></entry>
+<entry dataset="Swiss-Prot" created="2000-05-30" modified="2012-10-03" version="117">
+<accession>Q15173</accession>
+<fullName>Serine/threonine-protein phosphatase 2A 56 kDa regulatory subunit beta isoform</fullName>
+<gene>
+<name type="primary">PPP2R5B</name>
+</gene>
+<name type="scientific">Homo sapiens</name>
+<tissue>Fetal brain</tissue>
+<tissue>Brain</tissue>
+<sequence length="497" mass="57393" checksum="8BEF84F20A77982D" modified="1996-11-01" version="1" gravy="-0.28" cysteine="8" phi="6.27">
+METKLPPASTPTSPSSPGLSPVPPPDKVDGFSRRSLRRARPRRSHSSSQFRYQSNQQELT
+PLPLLKDVPASELHELLSRKLAQCGVMFDFLDCVADLKGKEVKRAALNELVECVGSTRGV
+LIEPVYPDIIRMISVNIFRTLPPSENPEFDPEEDEPNLEPSWPHLQLVYEFFLRFLESPD
+FQPSVAKRYVDQKFVLMLLELFDSEDPREREYLKTILHRVYGKFLGLRAYIRKQCNHIFL
+RFIYEFEHFNGVAELLEILGSIINGFALPLKTEHKQFLVRVLIPLHSVKSLSVFHAQLAY
+CVVQFLEKDATLTEHVIRGLLKYWPKTCTQKEVMFLGEMEEILDVIEPSQFVKIQEPLFK
+QVARCVSSPHFQVAERALYFWNNEYILSLIEDNCHTVLPAVFGTLYQVSKEHWNQTIVSL
+IYNVLKTFMEMNGKLFDELTASYKLEKQQEQQKAQERQELWQGLEELRLRRLQGTQGAKE
+APLQRLTPQVAASGGQS
+</sequence>
+<strand nb="0" pct="0.0"/><helix nb="0" pct="0.0"/><turn nb="0" pct="0.0"/></entry>
+<entry dataset="Swiss-Prot" created="1987-03-20" modified="2012-10-03" version="127">
+<accession>P04229</accession>
+<fullName>HLA class II histocompatibility antigen, DRB1-1 beta chain</fullName>
+<gene>
+<name type="primary">HLA-DRB1</name>
+</gene>
+<name type="scientific">Homo sapiens</name>
+<tissue>Cerebellum</tissue>
+<tissue>B-cell</tissue>
+<tissue>Blood</tissue>
+<feature type="strand">
+<location>
+<begin position="36"/>
+<end position="47"/>
+</location>
+</feature>
+<feature type="turn">
+<location>
+<begin position="48"/>
+<end position="51"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="52"/>
+<end position="63"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="65"/>
+<end position="70"/>
+</location>
+</feature>
+<feature type="turn">
+<location>
+<begin position="71"/>
+<end position="73"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="75"/>
+<end position="80"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="81"/>
+<end position="83"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="84"/>
+<end position="91"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="94"/>
+<end position="106"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="108"/>
+<end position="115"/>
+</location>
+</feature>
+<feature type="helix">
+<location>
+<begin position="116"/>
+<end position="118"/>
+</location>
+</feature>
+<feature type="turn">
+<location>
+<begin position="119"/>
+<end position="121"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="127"/>
+<end position="132"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="135"/>
+<end position="139"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="142"/>
+<end position="154"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="157"/>
+<end position="162"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="165"/>
+<end position="167"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="169"/>
+<end position="173"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="180"/>
+<end position="182"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="184"/>
+<end position="192"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="199"/>
+<end position="205"/>
+</location>
+</feature>
+<feature type="strand">
+<location>
+<begin position="213"/>
+<end position="218"/>
+</location>
+</feature>
+<sequence length="266" mass="29914" checksum="CC9CC7E2D0DD036C" modified="2003-08-29" version="2" precursor="true" gravy="-0.21" cysteine="7" phi="7.61">
+MVCLKLPGGSCMTALTVTLMVLSSPLALAGDTRPRFLWQLKFECHFFNGTERVRLLERCI
+YNQEESVRFDSDVGEYRAVTELGRPDAEYWNSQKDLLEQRRAAVDTYCRHNYGVGESFTV
+QRRVEPKVTVYPSKTQPLQHHNLLVCSVSGFYPGSIEVRWFRNGQEEKAGVVSTGLIQNG
+DWTFQTLVMLETVPRSGEVYTCQVEHPSVTSPLTVEWRARSESAQSKMLSGVGGFVLGLL
+FLGAGLFIYFRNQKGHSGLQPTGFLS
+</sequence>
+<strand nb="14" pct="31.95"/><helix nb="5" pct="11.28"/><turn nb="3" pct="2.63"/></entry>
+</uniprot>

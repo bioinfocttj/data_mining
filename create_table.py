@@ -1,7 +1,8 @@
 import lxml.etree as etree #parse XML
 import math
-#from scipy import cluster
-#from matplotlib.pyplot import show
+import sys
+
+
 
 def create_table(file):
 
@@ -58,7 +59,7 @@ def create_table(file):
 
 
 
-dico_prot,dico_struct,dico_chimie = create_table('echantillon_final.xml')
+dico_prot,dico_struct,dico_chimie = create_table('mini_echantillon.xml')
 
 #---------- Calcul matrice de distance length + cluster -----------------
 
@@ -100,39 +101,51 @@ def remplir_matrice_initiale(dico_prot,matrix):
 			matrix[i][j] = dist_length(a,b)
 	return matrix
 
-def mini(matrix_length): #plus petite distance dans la matrice
+def mini(matrix): #plus petite distance dans la matrice
 	savI=1
 	savJ=2
 	x=2
-	mini=matrix_length[1][2]
-	for i in range (x,len(matrix_length)):
-		for j in range (1,len(matrix_length)):
-			if matrix_length[i][j]<mini and matrix_length[i][j]!=0:
-				mini=matrix_length[i][j]
-				savI=matrix_length[0][i]
-				savJ=matrix_length[j][0]
+	mini=sys.maxint
+	for i in range (x,len(matrix)):
+		for j in range (1,len(matrix)):
+			if matrix[i][j]<mini and matrix[i][j]!=0:
+				mini=matrix[i][j]
+				savI=matrix[0][i]
+				savJ=matrix[j][0]
 		x+=1
-	return savI,savJ
+	return savI[0],savJ[0]
+	
+def trouver_distance(matrice,a,b):
+	for i in range (1,len(matrice)):
+		if a in matrice[0][i]:
+			for j in range (1,len(matrice)):
+				if b in matrice[j][0]:
+					d = matrice[i][j]
+	
+	return d
 
 def remplir_matrice(matrice,i,j,cluster): #fusion valeurs i et j 
 	newcluster=new_cluster(cluster,i,j)
 	matrix = init_matrix(len(matrice)-1)
 	matrix = ajout_identifiant(newcluster,matrix)
-	for ligne in range (len(matrice)):
-		for k in range(len(matrix[0])):
-			if matrix[0][k]==matrice[0][ligne]:
-				print matrice[0][ligne]
-				for l in range (1,len(matrix)):
-#############################################################################################################################
-					#print "test2",matrix[0][l][0]																			#
-				#	print "i",i[0]																							#
-					if i[0]==matrix[0][l][0]:
-						print "ok"																							#
-						matrix[0][k]=(matrice[l][ligne]+matrice[l][ligne])/2#calcul ou if foireux, matrice resultat vide	#
-						matrix[k][0]=(matrice[l][ligne]+matrice[l][ligne])/2												#
-	return matrix																											#
-																															#
-#############################################################################################################################
+	print 'i,j', i, j
+	for a in range (1,len(matrix)):
+		if i in matrix[0][a]  :
+			for b in range(1,len(matrix)):
+				if matrix[a][0][0]==matrix[0][b][0]:
+					matrix[a][b]=0.0
+				else :
+					matrix[a][b]=(trouver_distance(matrice,i,matrix[0][b][0])+trouver_distance(matrice,j,matrix[0][b][0]))/2
+					matrix[b][a]=(trouver_distance(matrice,i,matrix[0][b][0])+trouver_distance(matrice,j,matrix[0][b][0]))/2
+				
+		else :
+			for b in range(1,len(matrix)):
+				if matrix[a][0][0]==matrix[0][b][0]:
+					matrix[a][b]=0.0
+				else :
+					matrix[a][b]=trouver_distance(matrice,matrix[a][0][0],matrix[0][b][0])
+	return matrix,newcluster
+
 def liste_cluster(listeCluster,cluster):
 	listeCluster.append(cluster)
 
@@ -148,23 +161,29 @@ def creer_cluster(dico_prot):
 			
 def new_cluster(cluster,i,j):
 	newCluster=[]
-	for k in range (len(cluster)):
-		if cluster[k]!=i and cluster[k]!=j:
-			newCluster.append(cluster[k])
-	temp=[]
-	temp.append(i)
-	for k in range (len(i)):
-		temp.append(i[k])
-	for k in range (len(j)):
-		temp.append(j[k])
-	newCluster.append(temp)
+	for k in cluster :
+		if i not in k and j not in k:
+			newCluster.append(k)
+		if i in k :
+			l1 = k
+		if j in k :
+			l2 = k
+	for a in l2:
+		l1.append(a)
+	newCluster.append(l1)
 	return newCluster
 	
-clust1=creer_cluster(dico_prot)
-#print clust1
-mat=ajout_identifiant(clust1,matrix_length)
-mat=remplir_matrice_initiale(dico_prot,mat)
-savI,savJ=mini(mat)
-mat2=remplir_matrice(mat,savI,savJ,clust1)
-#print mat2
 
+
+clust=creer_cluster(dico_prot)
+mat=ajout_identifiant(clust,matrix_length)
+mat=remplir_matrice_initiale(dico_prot,mat)
+for l in mat :
+	print l
+
+print len(clust)
+while (len(clust))>1:
+	savI,savJ=mini(mat)
+	mat,clust=remplir_matrice(mat,savI,savJ,clust)
+	for l in mat :
+		print l
