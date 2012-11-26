@@ -7,14 +7,14 @@
 
 Afin de répondre à la problématique de départ, nous avons décidé de nous intéresser uniquement aux protéines humaines ayant été publiées, et plus particulièrement à celles disponibles sur la base de données \emph{uniprot}.
 
-En effet, la requête [\emph{(homo sapiens) AND reviewed:yes}] sur cette base de données permet d'obtenir 26070 protéines, ce qui est suffisant pour obtenir des résultats exploitables sans que cela ne devienne trop chronophage en terme de temps de traitement et d'analyse.
+En effet, la requête [\emph{(homo sapiens) AND reviewed:yes}] sur cette base de données permet d'obtenir 26 070 protéines, ce qui est suffisant pour obtenir des résultats exploitables sans que cela ne devienne trop chronophage en terme de temps de traitement et d'analyse.
 
 Nous récupérons donc les données sous la forme d'un fichier XML nous permettant de lire et de traiter facilement les données (parse de fichier texte). Les balises propres au système xml (<balise> information <\textbackslash balise>) facilitant la récupération des données d'inter\^et.
 
 \subsection*{Préparation des données}
 
 \addcontentsline{toc}{section}{Préparation des données}
-La préparation des données est indispensable car les données récupérées peuvent être incomplètes, bruitées ou incohérentes. 
+La préparation des données est indispensable car les données récupérées peuvent être incomplètes, bruitées ou incohérentes. Par exemple nous avons pu observer des protéines virales dans le jeu de données initiales ou même des clones de protéines humaines.
 
 \subsubsection*{Nettoyage}
 \addcontentsline{toc}{subsection}{Nettoyage}
@@ -28,7 +28,7 @@ Dans un premier temps, nous avons sélectionné les balises correspondantes aux 
 \item feature type ="strand  - helix - turn"\\
 \end{itemize}
 
-Cette récupération se fait grâce à un programme python que nous avons écrit nous permettant de "parser" le fichier XML précédemment acquis.\\
+Cette récupération se fait grâce à un programme python que nous avons écrit, nous permettant de "parser" le fichier XML précédemment acquis. Ainsi seules les données d'intérêt sont récupérées\\
 
 Ce script comporte deux parties, nous supprimons d'abord les balises qui ne sont pas utiles pour notre étude.
 Nous ajoutons ensuite des données calculées au fichier précédent qui vont nous permettre de créer les clusters par la suite. Il s'agit de:
@@ -66,12 +66,24 @@ Pour déterminer la distance entre deux protéines, nous calculons la distance d
 
 
 \subsubsection*{Localisation}
+Les protéines sont des constituants de nos organes et participe à la composition de la matrice de chacun de nos organes, tissus ainsi que nos cellules. Elles peuvent avoir différentes fonctions:
+\begin{itemize}
+\item messagers universels (entre deux organes),
+\item bâtisseurs omnipotents (Enzyme, Co-Enzyme),
+\item armes de défense active (Anticorps, Cytokines),
+\item base de la contraction musculaire (Actine, Myosine),  
+\item pompe "aspirantes-souflantes" (dans le sang: dispersent les aggloméra de lipide et pompent l'eau qui s'échappe des vaisseaux). \\
+\end{itemize}
+
+Nous avons fait le choix de nous restreindre au niveau organique. Un protéines à des fonctions déterminées qui peuvent être utile dans différents organes, voisin ou non. \\
+
 
 \subsubsection*{Conformation}
 Une protéine peut être décrite par un enchaînement de structures secondaires (hélices alpha, feuillets beta et coude) qui ont une influence sur son repliement. 
 
 \subsubsection*{Nombre de cystéine}
 Les ponts disulfures se forment au sein d'une protéine entre deux cystéines et créent des liaisons inter-chaines. 
+%pont disulfure d'une protéine
 
 
 \subsubsection*{Hydrophobicité}
@@ -84,6 +96,15 @@ Son caractère hydrophobe ou hydrophile influence :
 \end{itemize}
 
 \subsubsection*{pHi}
-Le pHi est le pH isoéléctrique d'une protéine, c'est à dire le pH auquel cette protéine a une charge nulle.
-Au dessus de ce pH, la protéine est chargée négativement et inversement.
+Le pHi est le pH isoéléctrique d'une protéine, c'est à dire le pH auquel cette protéine a une charge nulle et donc limite son déplacement dans un champ électrique physiologique.
+Au dessus de ce pH, la protéine est chargée négativement (pH basique) et inversement, en dessous elle est chargée positivement (pH acide).\\
+Les peptides composant la protéines sont des molécules chargées, à cause de leur groupement C (carbone) et N (azote) terminaux et les groupements fonctionnels des carbones alpha des acides aminés polaire. L'association de ses peptides détermines le pHi de la protéines car c'est le point de pH où les charges positives et négatives de l'ensemble de la protéines est nulle, soit que les charge positive et négative se compensent.\\
+Ainsi lorsqu'une protéine est dans un milieu égale à son pHi cela met en évidence différentes propriétés, tels que:
+\begin{itemize}
+\item sa solubilité qui est minimale,
+\item sa mobilité électrophorétique qui lui permet de migrer plus vers un milieu qu'un autre,
+\item son isoélectrofocalisation (IEF) qui repose sur ses peptides amphotères qui vont charger la protéines négativement ou positivement selon le milieu.
+\end{itemize}
+
+
 
