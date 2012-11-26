@@ -1,7 +1,7 @@
 import lxml.etree as etree #parse XML
 import math
 import sys
-
+import copy
 
 
 def create_table(file):
@@ -59,7 +59,7 @@ def create_table(file):
 
 
 
-dico_prot,dico_struct,dico_chimie = create_table('echantillon_final.xml')
+dico_prot,dico_struct,dico_chimie = create_table('mini_echantillon.xml')
 
 #---------- Calcul matrice de distance length + cluster -----------------
 
@@ -186,14 +186,12 @@ clustersTotaux=[]
 while (len(clust))>1:
 	savI,savJ=mini(mat)
 	mat,clust=remplir_matrice(mat,savI,savJ,clust)
-	#print 'clust',clust
 	temp=[]
-	#print 'temp',temp
-	temp=clust[:]
+	
+	temp = copy.deepcopy(clust)
+	print temp
 	print len(clust)
-	#clustersTotaux=liste_cluster(clustersTotaux, clust)
 	clustersTotaux.append(temp)
-	#print 'temp2',temp
 
-#for l in clustersTotaux:
-	#print l
+for l in clustersTotaux:
+	print l
