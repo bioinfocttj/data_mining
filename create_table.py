@@ -108,7 +108,7 @@ def mini(matrix): #plus petite distance dans la matrice
 	mini=sys.maxint
 	for i in range (x,len(matrix)):
 		for j in range (1,len(matrix)):
-			if matrix[i][j]<mini and matrix[i][j]!=0:
+			if matrix[i][j]<mini and i!=j:
 				mini=matrix[i][j]
 				savI=matrix[0][i]
 				savJ=matrix[j][0]
@@ -136,7 +136,7 @@ def remplir_matrice(matrice,i,j,cluster): #fusion valeurs i et j
 					matrix[a][b]=0.0
 				else :
 					matrix[a][b]=(trouver_distance(matrice,i,matrix[0][b][0])+trouver_distance(matrice,j,matrix[0][b][0]))/2
-					matrix[b][a]=(trouver_distance(matrice,i,matrix[0][b][0])+trouver_distance(matrice,j,matrix[0][b][0]))/2
+					matrix[b][a]=matrix[a][b]
 				
 		else :
 			for b in range(1,len(matrix)):
@@ -144,6 +144,7 @@ def remplir_matrice(matrice,i,j,cluster): #fusion valeurs i et j
 					matrix[a][b]=0.0
 				else :
 					matrix[a][b]=trouver_distance(matrice,matrix[a][0][0],matrix[0][b][0])
+					matrix[b][a]=matrix[a][b]
 	return matrix,newcluster
 
 def liste_cluster(listeCluster,cluster):
