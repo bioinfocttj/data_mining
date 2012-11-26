@@ -59,7 +59,7 @@ def create_table(file):
 
 
 
-dico_prot,dico_struct,dico_chimie = create_table('mini_echantillon.xml')
+dico_prot,dico_struct,dico_chimie = create_table('echantillon_final.xml')
 
 #---------- Calcul matrice de distance length + cluster -----------------
 
@@ -128,7 +128,7 @@ def remplir_matrice(matrice,i,j,cluster): #fusion valeurs i et j
 	newcluster=new_cluster(cluster,i,j)
 	matrix = init_matrix(len(matrice)-1)
 	matrix = ajout_identifiant(newcluster,matrix)
-	print 'i,j', i, j
+#	print 'i,j', i, j
 	for a in range (1,len(matrix)):
 		if i in matrix[0][a]  :
 			for b in range(1,len(matrix)):
@@ -149,13 +149,13 @@ def remplir_matrice(matrice,i,j,cluster): #fusion valeurs i et j
 
 def liste_cluster(listeCluster,cluster):
 	listeCluster.append(cluster)
+	return listeCluster
+
 
 
 def creer_cluster(dico_prot):
 	cluster=[]
-	#cluster=[len(dico_prot)]
 	for key in dico_prot.keys():
-	#	for i in range(len(cluster)):
 		temp=[key]
 		cluster.append(temp)
 	return cluster
@@ -173,18 +173,27 @@ def new_cluster(cluster,i,j):
 		l1.append(a)
 	newCluster.append(l1)
 	return newCluster
-	
-
 
 clust=creer_cluster(dico_prot)
 mat=ajout_identifiant(clust,matrix_length)
 mat=remplir_matrice_initiale(dico_prot,mat)
-for l in mat :
-	print l
+#for l in mat :
+#	print l
+
 
 print len(clust)
+clustersTotaux=[]
 while (len(clust))>1:
 	savI,savJ=mini(mat)
 	mat,clust=remplir_matrice(mat,savI,savJ,clust)
-	for l in mat :
-		print l
+	#print 'clust',clust
+	temp=[]
+	#print 'temp',temp
+	temp=clust[:]
+	print len(clust)
+	#clustersTotaux=liste_cluster(clustersTotaux, clust)
+	clustersTotaux.append(temp)
+	#print 'temp2',temp
+
+#for l in clustersTotaux:
+	#print l
