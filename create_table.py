@@ -224,7 +224,7 @@ def remplir_matrice_initiale_structure(dico,matrix):
 #------------------------------------------------                  -------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------
 
-dico_prot,dico_struct,dico_chimie = create_table('homo_final.xml')
+dico_prot,dico_struct,dico_chimie = create_table('echantillon_final.xml')
 
 #---------- Calcul matrice de distance length + cluster -----------------
 
@@ -241,7 +241,7 @@ def clustering_taille(liste):
 	temp=[]
 	for i in range (len(liste[0])):
 		temp.append(liste[0][i])
-		if i%250==0 and i!=0:
+		if i%100==0 and i!=0:
 			cluster.append(temp)
 			temp=[]
 	return cluster
@@ -265,13 +265,14 @@ def cluster_autre(liste,dico,texte):
 	cluster=creer_cluster(liste)
 	matrix = ajout_identifiant(cluster,matrix)
 	matrix=remplir_matrice_cluster(dico,matrix,texte)
-	while (len(cluster))>4:
-		print len(cluster)
-		savI,savJ=mini(matrix)
-		matrix,cluster=remplir_matrice(matrix,savI,savJ,cluster)
-		temp=[]
-		temp = copy.deepcopy(cluster)
-		#clustersTotauxStructure.append(temp)
+	if (len(cluster))>4 :
+		while (len(cluster))>4:
+			print len(cluster)
+			savI,savJ=mini(matrix)
+			matrix,cluster=remplir_matrice(matrix,savI,savJ,cluster)
+			temp=[]
+			temp = copy.deepcopy(cluster)
+			#clustersTotauxStructure.append(temp)
 	return temp
 
 # -------- Clusterisation Taille -------------------
@@ -280,22 +281,28 @@ clusterTaille = clustering_taille(l)    #----- clusterTaille = clusters de taill
 clusterStruct = [] #----- clusterStruct= clusters de structure a partir des clusters de taille
 
 # -------- Clusterisation Structure-------------------
-for i in range (0,1) :
+for i in range (len(clusterTaille)) :
 	print i, len(clusterTaille[i])
 	clusterStruct.append(cluster_struct(clusterTaille[i]))
 
 #~ for i in range (len(clusterStruct)) :
 	#~ print 'i', len(clusterStruct[i])
 
-# -------- Clusterisation Hydrophobicite------------------
-clusterHydro = []
-for i in range (0,1) :
-	for j in range (len(clusterStruct[i])):
-		clusterHydro.append(cluster_autre(clusterStruct[i][j],dico_chimie,'gravy'))
+#~ # -------- Clusterisation Hydrophobicite------------------
+#~ clusterHydro = []
+#~ for i in range (len(clusterStruct)) :
+	#~ for j in range (len(clusterStruct[i])):
+		#~ clusterHydro.append(cluster_autre(clusterStruct[i][j],dico_chimie,'gravy'))
+#~ 
+#~ for i in range (len(clusterHydro)):
+	#~ for j in range(len(clusterHydro[i])):
+		#~ print 'i', len(clusterHydro[i][j])	
 
-for i in range (len(clusterHydro)):
-	for j in range(len(clusterHydro[i])):
-		print 'i', len(clusterHydro[i][j])	
+filew = open('resultats.txt','w')
+filew.write(clusterTaille)
+filew.write(clusterStruct)
+
+filew.close()
 	
 
 #~ #for l in mat :
