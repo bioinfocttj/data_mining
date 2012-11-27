@@ -59,7 +59,7 @@ def create_table(file):
 
 
 
-dico_prot,dico_struct,dico_chimie = create_table('mini_echantillon.xml')
+dico_prot,dico_struct,dico_chimie = create_table('echantillon_test.xml')
 
 #---------- Calcul matrice de distance length + cluster -----------------
 
