@@ -184,14 +184,15 @@ dico_prot,dico_struct,dico_chimie = create_table('mini_echantillon.xml')
 
 #---------- Calcul matrice de distance length + cluster -----------------
 
+print '--------------cluster niveau taille de la chaine----------------'
 matrix_length = init_matrix(len(dico_prot)+1)
 
 #---- remplissage de la matrice ----
 clust=creer_cluster(dico_prot)
 mat=ajout_identifiant(clust,matrix_length)
 mat=remplir_matrice_initiale_length(dico_prot,mat)
-for l in mat :
-	print l
+#for l in mat :
+#	print l
 print len(clust)#sert a verifier a quel niveaux de cluster on est
 clustersTotaux=[]
 
@@ -204,11 +205,12 @@ while (len(clust))>1:
 	#print temp
 	print len(clust)
 	clustersTotaux.append(temp)
-print "---------------CLUSTERS TOTAUX----------------"
+	
+print "---------------CLUSTERS TOTAUX LENGTH----------------"
 for l in clustersTotaux:
 	print l
 
-print '--------------structure----------------'
+print '--------------cluster niveau structure secondaires----------------'
 matrix_struct = init_matrix(len(dico_struct)+1)
 clust2=creer_cluster(dico_struct)
 mat2=ajout_identifiant(clust2,matrix_struct)
@@ -216,6 +218,23 @@ for l in mat2 :
 	print l
 mat2=remplir_matrice_initiale_structure(dico_struct,mat2)
 print 'matrice remplie'
-for l in mat2 :
+#for l in mat2 :
+#	print l
+print len(clust)#sert a verifier a quel niveaux de cluster on est
+clustersTotauxStructure=[]
+
+while (len(clust2))>1:
+	savI,savJ=mini(mat2)
+	mat2,clust2=remplir_matrice(mat2,savI,savJ,clust2)
+	temp=[]
+	
+	temp = copy.deepcopy(clust2)
+	#print temp
+	print len(clust2)
+	clustersTotauxStructure.append(temp)
+print "---------------CLUSTERS TOTAUX STRUCTURE----------------"
+for l in clustersTotauxStructure:
 	print l
+
+print '--------------cluster niveau structure secondaires----------------'
 #print distance_structure(dico_struct['Q15173']['pct_helix'],dico_struct['Q15173']['pct_strand'],dico_struct['Q15173']['pct_turn'],dico_struct['P04229']['pct_helix'],dico_struct['P04229']['pct_strand'],dico_struct['P04229']['pct_turn'])
