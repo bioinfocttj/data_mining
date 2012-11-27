@@ -169,11 +169,12 @@ for parent in tree.findall('.//entry'):
     parent.append(turn)
 
 for e in nothuman :
-	e.getparent().remove(e)
+	if e.getparent()!=None:
+		e.getparent().remove(e)
 	
 	
     
 #tree.write("homo_final.xml")
-tree.write("echantillon_final.xml")
+tree.write("echantillon_test.xml")
 
 
