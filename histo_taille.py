@@ -93,7 +93,7 @@ for taille in tailles :
 		max=taille
 	if taille<min :
 		min = taille
-	if taille<200 and taille>100 :
+	if taille>212 and taille<225:
 		sup_1000+=1
 print min
 print max
