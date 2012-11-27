@@ -3,8 +3,8 @@ import sys
 sys.path.append('/net/cremi/alelievr/data_mining/biopython160/')
 from Bio.SeqUtils import ProtParam
 
-#file = open('/net/stockage/bioinfo_promo_2011_2013/DataMining/homo_sapiens.xml','r')
-file = open('/net/cremi/alelievr/data_mining/echantillon.xml','r')
+file = open('/net/stockage/bioinfo_promo_2011_2013/DataMining/homo_sapiens.xml','r')
+#~ file = open('/net/cremi/alelievr/data_mining/echantillon.xml','r')
 file2 = open('tmp.xml','w')
 
 file2.write('<uniprot>')
@@ -167,6 +167,8 @@ for parent in tree.findall('.//entry'):
     turn.attrib["nb"] = str(nb_turn)
     turn.attrib["pct"] = str(round(turnPct,2))
     parent.append(turn)
+    if strandPct==0 and helixPct==0 and turnPct==0:
+		nothuman.append(parent)
 
 for e in nothuman :
 	if e.getparent()!=None:
@@ -174,7 +176,7 @@ for e in nothuman :
 	
 	
     
-#tree.write("homo_final.xml")
-tree.write("echantillon_test.xml")
+tree.write("homo_final.xml")
+#~ tree.write("echantillon_test.xml")
 
 

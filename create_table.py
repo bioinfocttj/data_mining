@@ -59,7 +59,7 @@ def create_table(file):
 
 
 
-dico_prot,dico_struct,dico_chimie = create_table('echantillon_test.xml')
+dico_prot,dico_struct,dico_chimie = create_table('echantillon_final.xml')
 
 #---------- Calcul matrice de distance length + cluster -----------------
 
@@ -81,7 +81,34 @@ matrix_length = init_matrix(len(dico_prot)+1)
 
 #---- remplissage de la matrice ----
 
-
+def tri_taille(dico): #premier etape de clustarisation (taille) taille de cluster redefinies arbitrairement
+	liste=[[],[]]
+	for key in dico :
+		liste[0].append(key)
+		liste[1].append(dico[key]['length'])
+	#~ print 'avant'
+	#~ for i in liste:
+		#~ print i
+	liste=Tri_Bulle(liste)
+	#~ print 'apres'
+	#~ for j in liste:
+		#~ print j
+	return liste
+	
+def Tri_Bulle(liste):
+	l=liste[1]
+	l1=liste[0]
+	for i in xrange(len(l)):
+		for j in reversed(xrange(i,len(l))):
+			if l[j]<l[j-1]:
+				t=l[j]
+				t1=l1[j]
+				l[j]=l[j-1]
+				l1[j]=l1[j-1]
+				l[j-1]=t
+				l1[j-1]=t1
+	return liste
+	
 
 def ajout_identifiant(cluster,matrix):
 	ligne = 1
@@ -177,21 +204,37 @@ def new_cluster(cluster,i,j):
 clust=creer_cluster(dico_prot)
 mat=ajout_identifiant(clust,matrix_length)
 mat=remplir_matrice_initiale(dico_prot,mat)
-#for l in mat :
-#	print l
 
-
-print len(clust)
-clustersTotaux=[]
-while (len(clust))>1:
-	savI,savJ=mini(mat)
-	mat,clust=remplir_matrice(mat,savI,savJ,clust)
+def clustering_taille(liste):
+	cluster=[]
 	temp=[]
-	
-	temp = copy.deepcopy(clust)
-	print temp
-	print len(clust)
-	clustersTotaux.append(temp)
+	for i in range (len(liste[0])):
+		temp.append(liste[0][i])
+		if i%500==0 and i!=0:
+			cluster.append(temp)
+			temp=[]
+	print cluster
+	return cluster
 
-for l in clustersTotaux:
-	print l
+l = tri_taille(dico_prot)
+clustering_taille(l)
+
+#~ #for l in mat :
+#~ #	print l
+#~ 
+#~ 
+#~ print len(clust)
+#~ clustersTotaux=[]
+#~ while (len(clust))>1:
+	#~ savI,savJ=mini(mat)
+	#~ mat,clust=remplir_matrice(mat,savI,savJ,clust)
+	#~ temp=[]
+	#~ temp = copy.deepcopy(clust)
+	#~ print temp
+	#~ print len(clust)
+	#~ clustersTotaux.append(temp)
+
+#~ for l in clustersTotaux:
+	#~ print l
+
+
