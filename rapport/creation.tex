@@ -35,22 +35,22 @@ Nous ajoutons ensuite des données calculées au fichier précédent qui vont no
 \begin{itemize}
 \item Le nombre et le pourcentage d'hélices, de feuillets et de coudes dans la protéine.
 \item Le pourcentage d'hydrophobicité.
-\item Le pHi (point isoélectrique) qui a été déterminé à l'aide de la fonction \texttt{isoelectric\_point()} présente dans BioPython.
+\item Le pHi (point isoélectrique) qui a été déterminé à l'aide de la fonction\\ \texttt{isoelectric\_point()} présente dans BioPython.
 \item Le nombre de cystéines.
 \end{itemize}
 
 Nous avons également supprimé les informations dupliquées (identifiants, noms etc).
 Enfin nous avons remarqué que certaines protéines n'étaient pas des protéines humaines mais appartenaient à des virus, nous les avons donc supprimé.
 
-Nous obtenons ainsi un fichier XML contenant uniquement les données que nous avons e
+Nous obtenons ainsi un fichier XML contenant uniquement les données que nous avons sélectionnée
 
 
-\subsubsection*{Cluster}
-\addcontentsline{toc}{subsection}{Cluster}
-Nous avons choisi de réaliser un clustering hierarchique car l'attribution de scores aux protéines de le cas du clustering par scores nous paraissait fastidieuse.\\
+\subsubsection*{Clusters}
+\addcontentsline{toc}{subsection}{Clusters}
+Nous avons choisi de réaliser un clustering hiérarchique car l'attribution de scores aux protéines nous paraissait particulièrement complexe dans le cas de données non numérique.\\%de le cas du clustering par scores nous paraissait fastidieuse.\\
 Ainsi, nous avons choisi 7 niveaux de clusterisation:
 \begin{enumerate}
-\item Taille de la chaine (en nombre de acides aminés)
+\item Taille de la chaîne (en nombre d'acides aminés)
 \item Conformation (nombre d'hélices, de feuillets, de coudes et de cystéines)
 \item Localisation au niveau organe
 \item Pourcentage d'hydrophobicité
@@ -59,9 +59,9 @@ Ainsi, nous avons choisi 7 niveaux de clusterisation:
 
 
 \subsubsection*{Taille de la chaîne}
-Les protéines sont constitués d'une succession d'acides aminés reliés entre eux par des liaisons peptidiques. La taille d'une protéine correspond au nombre d'acides aminés qu'elle contient. La taille des protéines est très variable, des protéines ayant des tailles très différentes n'auront pas les m\^emes proriétés.
+Les protéines sont constitués d'une succession d'acides aminés reliés entre eux par des liaisons peptidiques. La taille d'une protéine est ainsi définit par le nombre d'acides aminés qu'elle contient. Cette taille étant très variable, les protéines ayant des tailles très différentes n'auront pas les m\^emes proriétés, ce critère constitue donc un bon premier niveau de clusterisation.
 
-Pour déterminer la distance entre deux protéines, nous calculons la distance de Manhattan.
+Pour déterminer la distance entre deux protéines, nous calculons la distance de Manhattan.% et créons des clusters de façon arbitraires, tout en tentant de maintenir un nombre equivalent de proteines dans chacun des groupes créés. Nous obtenons ainsi X clusters de x proteines en moyennes
 
 
 
