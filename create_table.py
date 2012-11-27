@@ -3,7 +3,6 @@ import math
 import sys
 import copy
 
-
 def create_table(file):
 
 	file = open(file,'r')
@@ -52,16 +51,9 @@ def create_table(file):
 		dico_prot[id_prot]['tissue']=list_tissue
 	return dico_prot,dico_struct,dico_chimie
 
-
 # dico_prot = {id_prot : [fullname,gene,length,[list tissue]]}
 # dico_struct = {id_prot : [nb_cystein,nb_strand,pct_strand,nb_helix,pct_helix,nb_turn,pct_turn]}
 # dico_chimie = {id_prot : [gravy,phi]}
-
-
-
-dico_prot,dico_struct,dico_chimie = create_table('echantillon_test.xml')
-
-#---------- Calcul matrice de distance length + cluster -----------------
 
 def init_matrix(d):   #creation matrice de distance de dimension d
 	matrix=[]
@@ -76,13 +68,6 @@ def dist_length(a,b): # calcul distance
 	dist = math.fabs(a-b)
 	return dist
 
-
-matrix_length = init_matrix(len(dico_prot)+1)
-
-#---- remplissage de la matrice ----
-
-
-
 def ajout_identifiant(cluster,matrix):
 	ligne = 1
 	for key in range(len(cluster)):#ajout des identifiants ds la 1ere ligne et 1ere colonne de la matrice de distance
@@ -91,7 +76,7 @@ def ajout_identifiant(cluster,matrix):
 		ligne+=1
 	return matrix
 
-def remplir_matrice_initiale(dico_prot,matrix):
+def remplir_matrice_initiale_length(dico_prot,matrix):
 	for i in range (1,len(matrix)):
 		key1=matrix[0][i]
 		a = dico_prot[key1[0]]['length']
@@ -121,7 +106,6 @@ def trouver_distance(matrice,a,b):
 			for j in range (1,len(matrice)):
 				if b in matrice[j][0]:
 					d = matrice[i][j]
-	
 	return d
 
 def remplir_matrice(matrice,i,j,cluster): #fusion valeurs i et j 
@@ -137,7 +121,6 @@ def remplir_matrice(matrice,i,j,cluster): #fusion valeurs i et j
 				else :
 					matrix[a][b]=(trouver_distance(matrice,i,matrix[0][b][0])+trouver_distance(matrice,j,matrix[0][b][0]))/2
 					matrix[b][a]=matrix[a][b]
-				
 		else :
 			for b in range(1,len(matrix)):
 				if matrix[a][0][0]==matrix[0][b][0]:
@@ -151,15 +134,13 @@ def liste_cluster(listeCluster,cluster):
 	listeCluster.append(cluster)
 	return listeCluster
 
-
-
 def creer_cluster(dico_prot):
 	cluster=[]
 	for key in dico_prot.keys():
 		temp=[key]
 		cluster.append(temp)
 	return cluster
-			
+
 def new_cluster(cluster,i,j):
 	newCluster=[]
 	for k in cluster :
@@ -174,24 +155,67 @@ def new_cluster(cluster,i,j):
 	newCluster.append(l1)
 	return newCluster
 
+def distance_structure(helixA,helixB,strandA,strandB,turnA,turnB):
+	d=abs(helixB-helixA)+abs(strandB-strandA)+abs(turnB-turnA)
+	return d 
+
+def remplir_matrice_initiale_structure(dico,matrix):
+	for i in range (1,len(matrix)):
+		key1=matrix[0][i]
+		Ahelix = dico[key1[0]]['pct_helix']
+		Astrand = dico[key1[0]]['pct_strand']
+		Aturn = dico[key1[0]]['pct_turn']
+		for j in range (1,len(matrix)):
+			key2=matrix[j][0]
+			Bhelix = dico[key2[0]]['pct_helix']
+			Bstrand = dico[key2[0]]['pct_strand']
+			Bturn = dico[key2[0]]['pct_turn']
+			d=distance_structure(Ahelix,Bhelix,Astrand,Bstrand,Aturn,Bturn)
+			#print 'd=',d
+			matrix[i][j] = d
+	return matrix
+
+#-------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------                  -------------------------------------------------
+#------------------------------------------------       MAIN       -------------------------------------------------
+#------------------------------------------------                  -------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------
+dico_prot,dico_struct,dico_chimie = create_table('mini_echantillon.xml')
+
+#---------- Calcul matrice de distance length + cluster -----------------
+
+matrix_length = init_matrix(len(dico_prot)+1)
+
+#---- remplissage de la matrice ----
 clust=creer_cluster(dico_prot)
 mat=ajout_identifiant(clust,matrix_length)
-mat=remplir_matrice_initiale(dico_prot,mat)
-#for l in mat :
-#	print l
-
-
-print len(clust)
+mat=remplir_matrice_initiale_length(dico_prot,mat)
+for l in mat :
+	print l
+print len(clust)#sert a verifier a quel niveaux de cluster on est
 clustersTotaux=[]
+
 while (len(clust))>1:
 	savI,savJ=mini(mat)
 	mat,clust=remplir_matrice(mat,savI,savJ,clust)
 	temp=[]
 	
 	temp = copy.deepcopy(clust)
-	print temp
+	#print temp
 	print len(clust)
 	clustersTotaux.append(temp)
-
+print "---------------CLUSTERS TOTAUX----------------"
 for l in clustersTotaux:
 	print l
+
+print '--------------structure----------------'
+matrix_struct = init_matrix(len(dico_struct)+1)
+clust2=creer_cluster(dico_struct)
+mat2=ajout_identifiant(clust2,matrix_struct)
+for l in mat2 :
+	print l
+mat2=remplir_matrice_initiale_structure(dico_struct,mat2)
+print 'matrice remplie'
+for l in mat2 :
+	print l
+#print distance_structure(dico_struct['Q15173']['pct_helix'],dico_struct['Q15173']['pct_strand'],dico_struct['Q15173']['pct_turn'],dico_struct['P04229']['pct_helix'],dico_struct['P04229']['pct_strand'],dico_struct['P04229']['pct_turn'])
