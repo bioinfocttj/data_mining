@@ -7,7 +7,7 @@ cpt2=0
 file2.write('<uniprot>')
 for line in file :
 	if '<entry' in line :
-		if cpt%20==0:
+		if cpt%40==0:
 			while '</entry>' not in line:
 				file2.write(line)
 				line = file.next()

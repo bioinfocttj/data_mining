@@ -175,6 +175,12 @@ def remplir_matrice_initiale_structure(dico,matrix):
 			matrix[i][j] = d
 	return matrix
 
+def cluster_taille(dico_prot):
+	cluster = []
+	for key in dico_prot :
+		if dico_prot[key]['length']<100 :
+			
+	
 #-------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------                  -------------------------------------------------
 #------------------------------------------------       MAIN       -------------------------------------------------
@@ -218,8 +224,8 @@ for l in mat2 :
 	print l
 mat2=remplir_matrice_initiale_structure(dico_struct,mat2)
 print 'matrice remplie'
-#for l in mat2 :
-#	print l
+for l in mat2 :
+	print l
 print len(clust)#sert a verifier a quel niveaux de cluster on est
 clustersTotauxStructure=[]
 
