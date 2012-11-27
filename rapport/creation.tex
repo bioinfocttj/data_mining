@@ -47,7 +47,8 @@ Nous obtenons ainsi un fichier XML contenant uniquement les données que nous av
 
 \subsubsection*{Clusters}
 \addcontentsline{toc}{subsection}{Clusters}
-Nous avons choisi de réaliser un clustering hiérarchique car l'attribution de scores aux protéines nous paraissait particulièrement complexe dans le cas de données non numérique.\\%de le cas du clustering par scores nous paraissait fastidieuse.\\
+Nous avons choisi de réaliser un clustering hiérarchique car l'attribution de scores aux protéines nous paraissait particulièrement complexe, dans le cas de données non numérique, et fastidieux.\\
+%de le cas du clustering par scores nous paraissait fastidieuse.\\
 Ainsi, nous avons choisi 7 niveaux de clusterisation:
 \begin{enumerate}
 \item Taille de la chaîne (en nombre d'acides aminés)
@@ -59,32 +60,31 @@ Ainsi, nous avons choisi 7 niveaux de clusterisation:
 
 
 \subsubsection*{Taille de la chaîne}
-Les protéines sont constitués d'une succession d'acides aminés reliés entre eux par des liaisons peptidiques. La taille d'une protéine est ainsi définit par le nombre d'acides aminés qu'elle contient. Cette taille étant très variable, les protéines ayant des tailles très différentes n'auront pas les m\^emes proriétés, ce critère constitue donc un bon premier niveau de clusterisation.
+Les protéines sont constitués d'une succession d'acides aminés reliés entre eux par des liaisons peptidiques. La taille d'une protéine est ainsi définit par le nombre d'acides aminés qu'elle contient. Cette taille étant très variable, les protéines ayant des tailles très différentes n'auront pas les mêmes propriétés, ce critère constitue donc un bon premier niveau de clusterisation.
 
-Pour déterminer la distance entre deux protéines, nous calculons la distance de Manhattan.% et créons des clusters de façon arbitraires, tout en tentant de maintenir un nombre equivalent de proteines dans chacun des groupes créés. Nous obtenons ainsi X clusters de x proteines en moyennes
-
-
+Pour déterminer la distance entre deux protéines, nous calculons la distance de Manhattan et créons des clusters de façon arbitraires, tout en tentant de maintenir un nombre equivalent de proteines dans chacun des groupes créés. Nous obtenons ainsi X clusters de x proteines en moyennes.\\
 
 \subsubsection*{Localisation}
-Les protéines sont des constituants de nos organes et participe à la composition de la matrice de chacun de nos organes, tissus ainsi que nos cellules. Elles peuvent avoir différentes fonctions:
-\begin{itemize}
-\item messagers universels (entre deux organes),
-\item bâtisseurs omnipotents (Enzyme, Co-Enzyme),
-\item armes de défense active (Anticorps, Cytokines),
-\item base de la contraction musculaire (Actine, Myosine),  
-\item pompe "aspirantes-souflantes" (dans le sang: dispersent les aggloméra de lipide et pompent l'eau qui s'échappe des vaisseaux). \\
-\end{itemize}
-
-Nous avons fait le choix de nous restreindre au niveau organique. Un protéines à des fonctions déterminées qui peuvent être utile dans différents organes, voisin ou non. \\
-
+Les protéines sont des constituants de notre organisme et participe à la composition de la matrice de chacun de nos organes, tissus ainsi que nos cellules. Elles peuvent avoir différentes fonctions spécifiques à leur localisation.\\
+%\begin{itemize}
+%\item messagers universels (entre deux organes),
+%\item bâtisseurs omnipotents (Enzyme, Co-Enzyme),
+%\item armes de défense active (Anticorps, Cytokines),
+%\item base de la contraction musculaire (Actine, Myosine),  
+%\item pompe "aspirantes-souflantes" (dans le sang: dispersent les aggloméra de lipide et pompent l'eau qui s'échappe des vaisseaux). \\
+%\end{itemize}
+Nous avons fait le choix de nous restreindre au niveau organique. Un protéines à des fonctions déterminées qui peuvent être utile dans différents organes, voisin ou non. 
+\\
 
 \subsubsection*{Conformation}
-Une protéine peut être décrite par un enchaînement de structures secondaires (hélices alpha, feuillets beta et coude) qui ont une influence sur son repliement. 
+Une protéine peut être décrite par un enchaînement de structures secondaires régulières et répétées (hélices alpha, feuillets bêta et coude bêta) qui influence la stabilité de son reploiement global.\\
+Les hélices alpha et les feuillets bêta sont formés par une configuration régulière de liaisons hydrogènes entre les groupements peptidiques \ce{N-H} et \ce{C=O} des résidus d'aminoacides. Leur formation est Ces liaisons sont impliquées dans de nombreux résidus consécutifs.
+\\
 
 \subsubsection*{Nombre de cystéine}
-Les ponts disulfures se forment au sein d'une protéine entre deux cystéines et créent des liaisons inter-chaines. 
-%pont disulfure d'une protéine
-
+Les ponts disulfures se forment au sein d'une protéine entre deux cystéines (lien \ce{S-S}) et créent des liaisons inter ou intra-chaines post-traductionnelle. Ce sont des liaisons covalentes formées par l'oxydation des groupements thiols (\ce{-SH}) qui donne une molécule de cystine.\\
+Cette architecture est un élément de la structure tertiaire ou quaternaire de la protéine en présence de dioxygène (\ce{O2-O2}).Elle permet de stabiliser la protéine en liant les chaînes pepidiques ou sous-unités de la protéines ou en  son repliement spécifique (site actif enzymatique). Elle permet ainsi de réduire son entropie configurationnelle.
+\\
 
 \subsubsection*{Hydrophobicité}
 L'hydrophobicité d'une protéine est déterminée à partir du nombre d'acides aminés hydrophobes qu'elle possède.
@@ -92,19 +92,16 @@ Nous avons calculé un index d'hydrophobicité (GRAVY: Grand average of hydropat
 Son caractère hydrophobe ou hydrophile influence :
 \begin{itemize}
 \item sa localisation au niveau cellulaire (cytoplasme ou membrane)
-\item son repliement (acides aminés hydrophobes à l'intérieur ou l'extérieur de la protéine selon sa localisation cellulaire) 
+\item son repliement (acides aminés hydrophobes à l'intérieur ou l'extérieur de la protéine selon sa localisation cellulaire) \\
 \end{itemize}
 
 \subsubsection*{pHi}
 Le pHi est le pH isoéléctrique d'une protéine, c'est à dire le pH auquel cette protéine a une charge nulle et donc limite son déplacement dans un champ électrique physiologique.
 Au dessus de ce pH, la protéine est chargée négativement (pH basique) et inversement, en dessous elle est chargée positivement (pH acide).\\
-Les peptides composant la protéines sont des molécules chargées, à cause de leur groupement C (carbone) et N (azote) terminaux et les groupements fonctionnels des carbones alpha des acides aminés polaire. L'association de ses peptides détermines le pHi de la protéines car c'est le point de pH où les charges positives et négatives de l'ensemble de la protéines est nulle, soit que les charge positive et négative se compensent.\\
+Les peptides composant la protéines sont des molécules chargées, à cause de leur groupement \ce{C} (carbone) et \ce{N} (azote) terminaux et les groupements fonctionnels des carbones alpha des acides aminés polaire. L'association de ses peptides détermines le pHi de la protéines car c'est le point de pH où les charges positives et négatives de l'ensemble de la protéines est nulle, soit que les charge positive et négative se compensent.\\
 Ainsi lorsqu'une protéine est dans un milieu égale à son pHi cela met en évidence différentes propriétés, tels que:
 \begin{itemize}
 \item sa solubilité qui est minimale,
 \item sa mobilité électrophorétique qui lui permet de migrer plus vers un milieu qu'un autre,
-\item son isoélectrofocalisation (IEF) qui repose sur ses peptides amphotères qui vont charger la protéines négativement ou positivement selon le milieu.
+\item son isoélectrofocalisation (IEF) qui repose sur ses peptides amphotères qui vont charger la protéines négativement ou positivement selon le milieu.\\
 \end{itemize}
-
-
-
