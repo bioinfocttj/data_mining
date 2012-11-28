@@ -121,6 +121,7 @@ def ajout_identifiant(cluster,matrix):
 def remplir_matrice_cluster(dico,matrix,texte):
 	for i in range (1,len(matrix)):
 		key1=matrix[0][i]
+		print 'key1',key1[0]
 		a = dico[key1[0]][texte]
 		for j in range (1,len(matrix)):
 			key2=matrix[j][0]
@@ -128,6 +129,17 @@ def remplir_matrice_cluster(dico,matrix,texte):
 			matrix[i][j] = dist(a,b)
 	return matrix
 
+def remplir_matrice_organe(dico,matrix,texte):
+	for i in range (1,len(matrix)):
+		key1=matrix[0][i]
+		a = dico[key1[0]][texte]
+		for j in range (1,len(matrix)):
+			key2=matrix[j][0]
+			b = dico[key2[0]][texte]
+			matrix[i][j] = distance_liste(a,b)
+	return matrix
+	
+	
 def mini(matrix): #plus petite distance dans la matrice
 	savI=1
 	savJ=2
@@ -154,7 +166,6 @@ def remplir_matrice(matrice,i,j,cluster): #fusion valeurs i et j
 	newcluster=new_cluster(cluster,i,j)
 	matrix = init_matrix(len(matrice)-1)
 	matrix = ajout_identifiant(newcluster,matrix)
-#	print 'i,j', i, j
 	for a in range (1,len(matrix)):
 		if i in matrix[0][a]  :
 			for b in range(1,len(matrix)):
@@ -201,6 +212,18 @@ def distance_structure(helixA,helixB,strandA,strandB,turnA,turnB):
 	d=abs(helixB-helixA)+abs(strandB-strandA)+abs(turnB-turnA)
 	return d 
 
+def distance_liste(l1,l2):
+	intersection = list(set(l1) & set(l2))
+	if (len(l1))>=(len(l2)):
+		L = len(l1)
+	else : 
+		L = len(l2)
+	if L!=0 :
+		return (len(intersection)/L)
+	else :
+		return 0
+
+
 def remplir_matrice_initiale_structure(dico,matrix):
 	for i in range (1,len(matrix)):
 		key1=matrix[0][i]
@@ -217,31 +240,12 @@ def remplir_matrice_initiale_structure(dico,matrix):
 			matrix[i][j] = d
 	return matrix
 
-
-#-------------------------------------------------------------------------------------------------------------------
-#------------------------------------------------                  -------------------------------------------------
-#------------------------------------------------       MAIN       -------------------------------------------------
-#------------------------------------------------                  -------------------------------------------------
-#-------------------------------------------------------------------------------------------------------------------
-
-dico_prot,dico_struct,dico_chimie = create_table('echantillon_final.xml')
-
-#---------- Calcul matrice de distance length + cluster -----------------
-
-#~ print '--------------cluster niveau taille de la chaine----------------'
-#~ matrix_length = init_matrix(len(dico_prot)+1)
-
-#---- remplissage de la matrice ----
-#~ clust=creer_cluster(dico_prot)
-#~ mat=ajout_identifiant(clust,matrix_length)
-#~ mat=remplir_matrice_initiale(dico_prot,mat)
-
 def clustering_taille(liste):
 	cluster=[]
 	temp=[]
 	for i in range (len(liste[0])):
 		temp.append(liste[0][i])
-		if i%100==0 and i!=0:
+		if i%50==0 and i!=0:
 			cluster.append(temp)
 			temp=[]
 	return cluster
@@ -265,6 +269,7 @@ def cluster_autre(liste,dico,texte):
 	cluster=creer_cluster(liste)
 	matrix = ajout_identifiant(cluster,matrix)
 	matrix=remplir_matrice_cluster(dico,matrix,texte)
+	temp = []
 	if (len(cluster))>4 :
 		while (len(cluster))>4:
 			print len(cluster)
@@ -272,103 +277,112 @@ def cluster_autre(liste,dico,texte):
 			matrix,cluster=remplir_matrice(matrix,savI,savJ,cluster)
 			temp=[]
 			temp = copy.deepcopy(cluster)
-			#clustersTotauxStructure.append(temp)
 	return temp
+
+def cluster_organe(liste,dico,texte):
+	matrix = init_matrix(len(liste)+1)
+	cluster=creer_cluster(liste)
+	matrix = ajout_identifiant(cluster,matrix)
+	matrix=remplir_matrice_organe(dico,matrix,texte)
+	temp = []
+	if (len(cluster))>4 :
+		while (len(cluster))>4:
+			print len(cluster)
+			savI,savJ=mini(matrix)
+			matrix,cluster=remplir_matrice(matrix,savI,savJ,cluster)
+			temp=[]
+			temp = copy.deepcopy(cluster)
+	return temp
+	
+def ecriture(cluster,fichier):
+	file = open(fichier,'w')
+	if cluster==clusterTaille:
+		for i in range(len(cluster)):
+			file.write('\n')
+			for j in range (len(cluster[i])):
+				file.write(cluster[i][j])
+				file.write(' ')
+	else:
+		for i in range(len(cluster)):
+			file.write('\n')
+			for j in range (len(cluster[i])):
+				file.write('\n')
+				for k in range (len(cluster[i][j])):
+					file.write(cluster[i][j][k])
+					file.write(' ')
+	file.close()
+	
+
+#-------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------                  -------------------------------------------------
+#------------------------------------------------       MAIN       -------------------------------------------------
+#------------------------------------------------                  -------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------
+
+dico_prot,dico_struct,dico_chimie = create_table('echantillon_final.xml')
 
 # -------- Clusterisation Taille -------------------
 l = tri_taille(dico_prot)
 clusterTaille = clustering_taille(l)    #----- clusterTaille = clusters de taille
-clusterStruct = [] #----- clusterStruct= clusters de structure a partir des clusters de taille
-
+clusterStruct = [] #----- clusterStruct = clusters de structure a partir des clusters de taille
+clusterHydro = [] #----- clusterHydro = clusters d'hydrophobicite a partir des clusters de structure
+clusterPhi = [] #----- clusterPhi = clusters Phi a partir des clusters de d'hydrophobicite
+clusterCys = []
+clusterOrgane = []
 # -------- Clusterisation Structure-------------------
 for i in range (len(clusterTaille)) :
-	print i, len(clusterTaille[i])
 	clusterStruct.append(cluster_struct(clusterTaille[i]))
 
-#~ for i in range (len(clusterStruct)) :
-	#~ print 'i', len(clusterStruct[i])
 
 #~ # -------- Clusterisation Hydrophobicite------------------
-#~ clusterHydro = []
-#~ for i in range (len(clusterStruct)) :
-	#~ for j in range (len(clusterStruct[i])):
-		#~ clusterHydro.append(cluster_autre(clusterStruct[i][j],dico_chimie,'gravy'))
-#~ 
-#~ for i in range (len(clusterHydro)):
-	#~ for j in range(len(clusterHydro[i])):
-		#~ print 'i', len(clusterHydro[i][j])	
-
-filew = open('resultats.txt','w')
-filew.write(clusterTaille)
-filew.write(clusterStruct)
-
-filew.close()
-	
-
-#~ #for l in mat :
-#~ #	print l
-#~ 
-#~ 
-#~ print len(clust)
-#~ clustersTotaux=[]
-#~ while (len(clust))>1:
-	#~ savI,savJ=mini(mat)
-	#~ mat,clust=remplir_matrice(mat,savI,savJ,clust)
-	#~ temp=[]
-	#~ temp = copy.deepcopy(clust)
-	#~ print temp
-	#~ print len(clust)
-	#~ clustersTotaux.append(temp)
-
-#~ for l in clustersTotaux:
-	#~ print l
+for i in range (len(clusterStruct)) :
+	for j in range (len(clusterStruct[i])):
+		clusterHydro.append(cluster_autre(clusterStruct[i][j],dico_chimie,'gravy'))
 
 
 
-#~ mat=remplir_matrice_initiale_length(dico_prot,mat)
-#for l in mat :
-#	print l
-#~ print len(clust)#sert a verifier a quel niveaux de cluster on est
-#~ clustersTotaux=[]
+# -------------- Clusterisation Phi ----------------------
+for i in range (len(clusterHydro)) :
+	for j in range (len(clusterHydro[i])):
+		for k in range (len(clusterHydro[i][j])):
+			clusterPhi.append(cluster_autre(clusterHydro[i][j][k],dico_chimie,'phi'))
+		
+		
+#-----------------Clusterisation Cysteine---------------------
+for i in range (len(clusterPhi)) :
+	for j in range (len(clusterPhi[i])):
+		clusterCys.append(cluster_autre(clusterPhi[i][j],dico_struct,'nb_cystein'))
+				
+#-----------------Clusterisation organe---------------------
+for i in range (len(clusterCys)) :
+	for j in range (len(clusterCys[i])):
+		clusterOrgane.append(cluster_organe(clusterCys[i][j],dico_prot,'tissue')) 
 
-#~ while (len(clust))>1:
-	#~ savI,savJ=mini(mat)
-	#~ mat,clust=remplir_matrice(mat,savI,savJ,clust)
-	#~ temp=[]
-	#~ temp = copy.deepcopy(clust)
-	#~ print len(clust)
-	#~ clustersTotaux.append(temp)
-	
-#~ print "---------------CLUSTERS TOTAUX LENGTH----------------"
-#~ for l in clustersTotaux:
-	#~ print l
+#----------------Ecriture resultats fichiers -----------------
+
+#~ ecriture(clusterTaille,'resultat_taille1.txt')
+#~ ecriture(clusterStruct,'resultat_structure2.txt')
+#~ ecriture(clusterHydro,'resultat_hydro3.txt')
+#~ ecriture(clusterStruct,'resultat_phi4.txt')
+#~ ecriture(clusterStruct,'resultat_cys5.txt')
+#~ ecriture(clusterStruct,'resultat_organe6.txt')
+
+print '-----------------------------------------------------------clusterTaille'
+print clusterTaille
+
+print '-----------------------------------------------------------clusterStruct'
+print clusterStruct
 
 
-#~ print '--------------cluster niveau structure secondaires----------------'
-#~ matrix_struct = init_matrix(len(dico_struct)+1)
-#~ clust2=creer_cluster(dico_struct)
-#~ mat2=ajout_identifiant(clust2,matrix_struct)
-#~ for l in mat2 :
-	#~ print l
-#~ mat2=remplir_matrice_initiale_structure(dico_struct,mat2)
-#~ print 'matrice remplie'
-#~ for l in mat2 :
-	#~ print l
-#~ print len(clust)#sert a verifier a quel niveaux de cluster on est
-#~ clustersTotauxStructure=[]
+print '-----------------------------------------------------------clusterHydro'
+print clusterHydro
 
-#~ while (len(clust2))>1:
-	#~ savI,savJ=mini(mat2)
-	#~ mat2,clust2=remplir_matrice(mat2,savI,savJ,clust2)
-	#~ temp=[]
-	#~ 
-	#~ temp = copy.deepcopy(clust2)
-	#~ #print temp
-	#~ print len(clust2)
-	#~ clustersTotauxStructure.append(temp)
-#~ print "---------------CLUSTERS TOTAUX STRUCTURE----------------"
-#~ for l in clustersTotauxStructure:
-	#~ print l
-#~ 
-#~ print '--------------cluster niveau structure secondaires----------------'
-#print distance_structure(dico_struct['Q15173']['pct_helix'],dico_struct['Q15173']['pct_strand'],dico_struct['Q15173']['pct_turn'],dico_struct['P04229']['pct_helix'],dico_struct['P04229']['pct_strand'],dico_struct['P04229']['pct_turn'])
+print '-----------------------------------------------------------clusterPhi'
+print clusterPhi
+
+print '-----------------------------------------------------------clusterCys'
+print clusterCys
+
+
+print '-----------------------------------------------------------clusterOrgane'
+print clusterOrgane

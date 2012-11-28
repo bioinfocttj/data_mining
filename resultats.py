@@ -77,4 +77,4 @@ file.write('}')
 
 file.close()
 
-os.popen('xdot resultat.dot&')
+os.popen('dotty resultat.dot&')
