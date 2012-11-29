@@ -1,7 +1,9 @@
 import lxml.etree as etree #parse XML
 import numpy
+from mpl_toolkits.mplot3d import Axes3D
 
-import lxml.etree as etree #parse XML
+from pylab import *
+ 
 
 def create_table(file):
 
@@ -69,7 +71,7 @@ dico_prot,dico_struct,dico_chimie = create_table('homo_final.xml')
 
 #~ def stat_structure(file_name,texte):
 	#~ file = open(file_name,'r')
-	#~ for line in file :
+	#~ for line in file :from mpl_toolkits.mplot3d import Axes3D
 		#~ if line!=('\n'):
 			#~ valeurs=[]
 			#~ tab = line.split(' ')
@@ -83,6 +85,7 @@ dico_prot,dico_struct,dico_chimie = create_table('homo_final.xml')
 
 
 def resultat(file_name,file_result):
+	nb_cluster_seul = 0
 	nb_cluster=0
 	file = 	file = open(file_name,'r')
 	file2 = open(file_result,'w')
@@ -92,9 +95,14 @@ def resultat(file_name,file_result):
 			s = 'cluster n'+str(nb_cluster)+('\n')
 			file2.write(s)
 			tab = line.split(' ')
+			if (len(tab))==2:
+				nb_cluster_seul+=1
 			for i in range (len(tab)-1):
 				s = '	-'+str(dico_prot[tab[i]]['fullname'])+('\n')
 				file2.write(s)
+	file2.write('Nombre de cluster a une proteine')
+	file2.write(str(nb_cluster_seul))
+	print nb_cluster
 	file.close()
 	file2.close()
 
@@ -102,6 +110,10 @@ def moyenne_intracluster(file_name,file_result):
 	nb_cluster=0
 	file = 	file = open(file_name,'r')
 	file2 = open(file_result,'w')
+	histo_taille = []
+	hydro_std= []
+	histo_hydro = []
+	histo_phi = []
 	for line in file :
 		taille = []
 		hydro = []
@@ -123,11 +135,14 @@ def moyenne_intracluster(file_name,file_result):
 				hydro.append(dico_chimie[tab[i]]['gravy'])
 				phi.append(dico_chimie[tab[i]]['phi'])
 				cys.append(dico_struct[tab[i]]['nb_cystein'])
-			moyenne_struct = numpy.average(taille)
 			moyenne_taille = numpy.average(taille)
+			std_taille=numpy.std(taille)
 			moyenne_hydro = numpy.average(hydro)
+			std_hydro=numpy.std(hydro)
 			moyenne_phi = numpy.average(phi)
+			std_phi=numpy.std(phi)
 			moyenne_cys = numpy.average(cys) 
+			std_cys=numpy.std(cys)
 			moyenne_strand = numpy.average(strand)
 			moyenne_turn = numpy.average(turn)
 			moyenne_helix = numpy.average(helix)
@@ -152,9 +167,22 @@ def moyenne_intracluster(file_name,file_result):
 			file2.write('moyenne coude :')
 			file2.write(str(moyenne_turn))
 			file2.write('\n')
-
+			histo_taille.append(moyenne_taille)
+			hydro_std.append(std_hydro)
+			histo_hydro.append(moyenne_hydro)
+			histo_phi.append(moyenne_phi)
 	file.close()
-	file2.close()	
+	file2.close()
+	#~ y=[]
+	#~ for i in range(len(histo_taille)):
+		#~ y.append(i)
+	#~ fig = figure()
+	#~ ax = fig.add_subplot(1,1,1)
+	#~ ax.bar(y,hydro_std)
+	#~ ax.scatter(histo_taille,histo_hydro,color='blue',s=100,edgecolor='none')
+	#~ ax.scatter(histo_taille, histo_hydro, histo_phi)
+	#~ show()
+
 #~ print '----------TAILLE----------------------'
 #~ 
 #~ stat('resultat_taille1.txt',dico_prot,'length')
@@ -180,3 +208,5 @@ moyenne_intracluster('resultat_hydro3.txt','resultat_intracluster3.txt')
 moyenne_intracluster('resultat_phi4.txt','resultat_intracluster4.txt')
 moyenne_intracluster('resultat_cys5.txt','resultat_intracluster5.txt')
 moyenne_intracluster('resultat_organe6.txt','resultat_intracluster6.txt')
+
+resultat('resultat_organe6.txt','blabla.txt')

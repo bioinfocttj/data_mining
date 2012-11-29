@@ -1,14 +1,35 @@
 \section*{Résultats}
-
 \addcontentsline{toc}{chapter}{Résultats}
 
-\subsection*{Comment analyser les résultats}
+\subsection*{Résultats de la clusterisation}
+\addcontentsline{toc}{section}{Résultats de la clusterisation}
+Après clusterisation de la taille, on obtient 17 clusters.\\
+Après clusterisation de la structure secondaire, on obtient 68 clusters.\\
+Après clusterisation de l'hydrophobicité, on obtient 197 clusters.\\
+Après clusterisation du pHi, on obtient 467 clusters.\\
+Après clusterisation des cystéines, on obtient 1022 clusters.\\
+Après clusterisation de la localisation, on obtient 1929 clusters.\\
 
-\addcontentsline{toc}{section}{Comment analyser les résultats}
+Exemple de cluster :
+\begin{verbatim}
+cluster n°1506
+	-Pyruvate kinase isozymes M1/M2
+	-NADP-dependent malic enzyme
+	-Dihydropyrimidinase-related protein 2
+	-Beta-hexosaminidase subunit beta
+\end{verbatim}
+\subsection*{Analyse et critique des résultats}
+\addcontentsline{toc}{section}{Analyse des résultats}
+Après avoir déterminé les moyennes et écart-types de chaque cluster, nous nous sommes rendus compte que les écart-types étaient relativement corrects. En effet, si l'on prend l'exemple de l'hydrophobicité dont les valeurs sont comprises entre -4,5 et 4,5 (calcul de l'hydrophobicité par la méthode GRAVY), on retrouve un écart-type maximal proche de 0,4. Cependant, la justesse de ces résultats est toute relative car on retrouve de nombreux clusters contenant une seule protéine.\\
+Ce problème se retrouve à tous les niveaux de la clusterisation et plus particulièrement au dernier où l'on retrouve 1221 clusters mono-protéiques.\\
+
+Nous avons envisagé la possibilité de ne pas réaliser ce dernier niveau de clusterisation afin de réduire ces clusters mono-protéiques (500 à l'avant dernier niveau), mais certains clusters deviennnent alors énormes (plus de 100 protéines). Il aurait fallu, au niveau des tissus, dans le cas des protéines sans données:
+\begin{itemize}
+\item Ne pas les prendre en compte lors de la fabrication du data warehouse, mais cela réduisait trop le nombre de données,
+\item ou arr\^eter la clusterisation des ces protéines au niveau précédent.\\
+\end{itemize}
+
+Par ailleurs, la stratégie de clusterisation que nous avons appliqué n'élimine pas les protéines hors-champ (out layers), elle fausse donc en partie les résultats obtenus.
 
 
-
-\subsection*{Critique de notre méthode}
-
-\addcontentsline{toc}{section}{Critique de notre méthode}
 
