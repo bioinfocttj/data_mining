@@ -73,9 +73,9 @@ def init_matrix(d):   #creation matrice de distance de dimension d
 		matrix.append(line)
 	return matrix
 
-def dist(a,b): # calcul distance 
-	dist = math.fabs(a-b)
-	return dist
+def distance(a,b): # calcul distance 
+	d = math.fabs(a-b)
+	return d
 
 #~ matrix_length = init_matrix(len(dico_prot)+1)
 
@@ -120,7 +120,7 @@ def remplir_matrice_cluster(dico,matrix,texte):
 		for j in range (1,len(matrix)):
 			key2=matrix[j][0]
 			b = dico[key2[0]][texte]
-			matrix[i][j] = dist(a,b)
+			matrix[i][j] = distance(a,b)
 	return matrix
 
 def remplir_matrice_organe(dico,matrix,texte):
@@ -177,9 +177,6 @@ def remplir_matrice(matrice,i,j,cluster): #fusion valeurs i et j
 					matrix[b][a]=matrix[a][b]
 	return matrix,newcluster
 
-def liste_cluster(listeCluster,cluster):
-	listeCluster.append(cluster)
-	return listeCluster
 
 def creer_cluster(liste):
 	cluster=[]
@@ -238,7 +235,7 @@ def clustering_taille(liste):
 	temp=[]
 	for i in range (len(liste[0])):
 		temp.append(liste[0][i])
-		if i%200==0 and i!=0:
+		if i%250==0 and i!=0:
 			cluster.append(temp)
 			temp=[]
 	return cluster
@@ -367,7 +364,7 @@ def ecriture(cluster,fichier):
 #------------------------------------------------                  -------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------
 
-dico_prot,dico_struct,dico_chimie = create_table('echantillon_final.xml')
+dico_prot,dico_struct,dico_chimie = create_table('homo_final.xml')
 
 # -------- Clusterisation Taille -------------------
 l = tri_taille(dico_prot)
@@ -415,7 +412,7 @@ for i in range (len(clusterCys)) :
 				for m in range (len(clusterCys[i][j][k][l])):
 					clusterOrgane[i][j][k][l][m]=(cluster_organe(clusterCys[i][j][k][l][m],dico_prot,'tissue')) 
 
-#----------------Ecriture resultats fichiers -----------------
+#----------------Ecriture des resultats dans des fichiers -----------------
 
 ecriture(clusterTaille,'resultat_taille1.txt')
 ecriture(clusterStruct,'resultat_structure2.txt')
