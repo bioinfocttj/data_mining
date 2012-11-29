@@ -93,7 +93,11 @@ for taille in tailles :
 		max=taille
 	if taille<min :
 		min = taille
+<<<<<<< HEAD
+	if taille<362 and taille>350 :
+=======
 	if taille>212 and taille<225:
+>>>>>>> 39ef50828a699714c1391cca00ee0a52ff893de0
 		sup_1000+=1
 print min
 print max
@@ -101,3 +105,12 @@ print sup_1000
 print 'moyenne', sum(tailles)/len(tailles)
 print 'mediane', median(tailles)
 print meanstdv(tailles)
+
+
+# *-------test struct
+i=0
+for key in dico_struct :
+	if dico_struct[key]['nb_helix']==0 and dico_struct[key]['nb_strand']==0 and dico_struct[key]['nb_turn']==0:
+		i+=1
+print 'eeeeee', i 
+	
