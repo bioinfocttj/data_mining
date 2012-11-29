@@ -1,136 +1,136 @@
 cluster n 1
-moyenne taille :103.557768924
-moyenne hydro :-0.282788844622
-moyenne phi :7.32545816733
-moyenne cysteine :3.05577689243
-moyenne beta :24.0280079681
-moyenne alpha :16.902749004
-moyenne coude :2.15458167331
+moyenne taille :103.557768924ecart-type taille :18.9286679805
+moyenne hydro :-0.282788844622ecart-type taille :0.400737605822
+moyenne phi :7.32545816733ecart-type taille :2.05579641348
+moyenne cysteine :3.05577689243ecart-type taille :3.22293766388
+moyenne beta :24.0280079681ecart-type taille :20.0989282785
+moyenne alpha :16.902749004ecart-type taille :15.0376409
+moyenne coude :2.15458167331ecart-type taille :2.75673997019
 cluster n 2
-moyenne taille :154.816
-moyenne hydro :-0.36304
-moyenne phi :7.15964
-moyenne cysteine :3.78
-moyenne beta :24.56104
-moyenne alpha :18.66424
-moyenne coude :2.13124
+moyenne taille :154.816ecart-type taille :12.954309862
+moyenne hydro :-0.36304ecart-type taille :0.322741318086
+moyenne phi :7.15964ecart-type taille :1.89019413564
+moyenne cysteine :3.78ecart-type taille :3.12083322207
+moyenne beta :24.56104ecart-type taille :18.0068537096
+moyenne alpha :18.66424ecart-type taille :15.4023512628
+moyenne coude :2.13124ecart-type taille :2.10339393895
 cluster n 3
-moyenne taille :193.908
-moyenne hydro :-0.3604
-moyenne phi :6.87948
-moyenne cysteine :4.272
-moyenne beta :25.47096
-moyenne alpha :15.76416
-moyenne coude :1.90112
+moyenne taille :193.908ecart-type taille :9.4252605269
+moyenne hydro :-0.3604ecart-type taille :0.300456719013
+moyenne phi :6.87948ecart-type taille :1.64469648556
+moyenne cysteine :4.272ecart-type taille :2.75354607733
+moyenne beta :25.47096ecart-type taille :16.0587395981
+moyenne alpha :15.76416ecart-type taille :11.8746819871
+moyenne coude :1.90112ecart-type taille :1.67276213061
 cluster n 4
-moyenne taille :225.976
-moyenne hydro :-0.40744
-moyenne phi :7.20636
-moyenne cysteine :4.836
-moyenne beta :23.38736
-moyenne alpha :14.9744
-moyenne coude :1.66232
+moyenne taille :225.976ecart-type taille :10.8498582479
+moyenne hydro :-0.40744ecart-type taille :0.32138426595
+moyenne phi :7.20636ecart-type taille :1.78474377724
+moyenne cysteine :4.836ecart-type taille :3.4964416197
+moyenne beta :23.38736ecart-type taille :17.2638570033
+moyenne alpha :14.9744ecart-type taille :10.1490624907
+moyenne coude :1.66232ecart-type taille :1.55424380893
 cluster n 5
-moyenne taille :265.004
-moyenne hydro :-0.3486
-moyenne phi :7.07596
-moyenne cysteine :6.524
-moyenne beta :19.7014
-moyenne alpha :15.86344
-moyenne coude :1.68688
+moyenne taille :265.004ecart-type taille :11.5559501557
+moyenne hydro :-0.3486ecart-type taille :0.29915888755
+moyenne phi :7.07596ecart-type taille :1.72043717653
+moyenne cysteine :6.524ecart-type taille :5.49194173312
+moyenne beta :19.7014ecart-type taille :16.9121956008
+moyenne alpha :15.86344ecart-type taille :11.5583269796
+moyenne coude :1.68688ecart-type taille :1.52329769435
 cluster n 6
-moyenne taille :304.828
-moyenne hydro :-0.37
-moyenne phi :7.0274
-moyenne cysteine :6.52
-moyenne beta :21.82848
-moyenne alpha :14.45668
-moyenne coude :1.59732
+moyenne taille :304.828ecart-type taille :11.3270656394
+moyenne hydro :-0.37ecart-type taille :0.320058744608
+moyenne phi :7.0274ecart-type taille :1.59118146042
+moyenne cysteine :6.52ecart-type taille :4.80183298335
+moyenne beta :21.82848ecart-type taille :15.5302112056
+moyenne alpha :14.45668ecart-type taille :10.2654721361
+moyenne coude :1.59732ecart-type taille :1.45075001899
 cluster n 7
-moyenne taille :344.312
-moyenne hydro :-0.34828
-moyenne phi :7.00216
-moyenne cysteine :7.22
-moyenne beta :21.73792
-moyenne alpha :14.892
-moyenne coude :1.53068
+moyenne taille :344.312ecart-type taille :11.3235443215
+moyenne hydro :-0.34828ecart-type taille :0.324519092813
+moyenne phi :7.00216ecart-type taille :1.52311107093
+moyenne cysteine :7.22ecart-type taille :5.07578565347
+moyenne beta :21.73792ecart-type taille :16.3123829919
+moyenne alpha :14.892ecart-type taille :10.9567396245
+moyenne coude :1.53068ecart-type taille :1.34042468554
 cluster n 8
-moyenne taille :383.504
-moyenne hydro :-0.34352
-moyenne phi :6.91464
-moyenne cysteine :8.072
-moyenne beta :19.75912
-moyenne alpha :13.56768
-moyenne coude :1.51252
+moyenne taille :383.504ecart-type taille :11.4634193852
+moyenne hydro :-0.34352ecart-type taille :0.299978015194
+moyenne phi :6.91464ecart-type taille :1.61460659927
+moyenne cysteine :8.072ecart-type taille :5.16166794748
+moyenne beta :19.75912ecart-type taille :13.9184468396
+moyenne alpha :13.56768ecart-type taille :10.0991756603
+moyenne coude :1.51252ecart-type taille :1.44740445267
 cluster n 9
-moyenne taille :419.58
-moyenne hydro :-0.38936
-moyenne phi :6.98076
-moyenne cysteine :8.592
-moyenne beta :19.15748
-moyenne alpha :11.5676
-moyenne coude :1.60752
+moyenne taille :419.58ecart-type taille :10.138816499
+moyenne hydro :-0.38936ecart-type taille :0.27423127174
+moyenne phi :6.98076ecart-type taille :1.55497003907
+moyenne cysteine :8.592ecart-type taille :5.23464764812
+moyenne beta :19.15748ecart-type taille :14.6677327917
+moyenne alpha :11.5676ecart-type taille :9.20331069996
+moyenne coude :1.60752ecart-type taille :1.39190669572
 cluster n 10
-moyenne taille :460.952
-moyenne hydro :-0.40808
-moyenne phi :6.84844
-moyenne cysteine :10.388
-moyenne beta :17.73556
-moyenne alpha :10.11952
-moyenne coude :1.33088
+moyenne taille :460.952ecart-type taille :11.8708759576
+moyenne hydro :-0.40808ecart-type taille :0.275684445698
+moyenne phi :6.84844ecart-type taille :1.41338188979
+moyenne cysteine :10.388ecart-type taille :6.2319704749
+moyenne beta :17.73556ecart-type taille :13.9573546737
+moyenne alpha :10.11952ecart-type taille :8.62112942541
+moyenne coude :1.33088ecart-type taille :1.26264105176
 cluster n 11
-moyenne taille :504.612
-moyenne hydro :-0.41632
-moyenne phi :7.0692
-moyenne cysteine :9.508
-moyenne beta :19.0128
-moyenne alpha :9.87772
-moyenne coude :1.45968
+moyenne taille :504.612ecart-type taille :13.6960379672
+moyenne hydro :-0.41632ecart-type taille :0.287815318564
+moyenne phi :7.0692ecart-type taille :1.47126889453
+moyenne cysteine :9.508ecart-type taille :5.62440539079
+moyenne beta :19.0128ecart-type taille :15.252048366
+moyenne alpha :9.87772ecart-type taille :7.90593711091
+moyenne coude :1.45968ecart-type taille :1.24372307915
 cluster n 12
-moyenne taille :566.672
-moyenne hydro :-0.4414
-moyenne phi :7.0274
-moyenne cysteine :11.96
-moyenne beta :15.53724
-moyenne alpha :8.61568
-moyenne coude :1.08452
+moyenne taille :566.672ecart-type taille :21.8127581016
+moyenne hydro :-0.4414ecart-type taille :0.259996999983
+moyenne phi :7.0274ecart-type taille :1.54879748192
+moyenne cysteine :11.96ecart-type taille :9.10990669546
+moyenne beta :15.53724ecart-type taille :13.5035909884
+moyenne alpha :8.61568ecart-type taille :7.60771827407
+moyenne coude :1.08452ecart-type taille :1.08574286532
 cluster n 13
-moyenne taille :642.616
-moyenne hydro :-0.4808
-moyenne phi :7.03904
-moyenne cysteine :12.748
-moyenne beta :12.64884
-moyenne alpha :7.93364
-moyenne coude :1.15432
+moyenne taille :642.616ecart-type taille :23.8296568167
+moyenne hydro :-0.4808ecart-type taille :0.254366978989
+moyenne phi :7.03904ecart-type taille :1.51443397954
+moyenne cysteine :12.748ecart-type taille :8.02524118018
+moyenne beta :12.64884ecart-type taille :12.0141130948
+moyenne alpha :7.93364ecart-type taille :7.15018304314
+moyenne coude :1.15432ecart-type taille :1.21126699683
 cluster n 14
-moyenne taille :731.796
-moyenne hydro :-0.49
-moyenne phi :6.75304
-moyenne cysteine :14.808
-moyenne beta :13.65624
-moyenne alpha :8.39144
-moyenne coude :1.09532
+moyenne taille :731.796ecart-type taille :28.7076711699
+moyenne hydro :-0.49ecart-type taille :0.288074990237
+moyenne phi :6.75304ecart-type taille :1.42577486245
+moyenne cysteine :14.808ecart-type taille :8.88251856176
+moyenne beta :13.65624ecart-type taille :12.7894127255
+moyenne alpha :8.39144ecart-type taille :8.65626170621
+moyenne coude :1.09532ecart-type taille :1.06434472686
 cluster n 15
-moyenne taille :855.364
-moyenne hydro :-0.4706
-moyenne phi :6.60924
-moyenne cysteine :19.044
-moyenne beta :11.26596
-moyenne alpha :6.70904
-moyenne coude :1.03004
+moyenne taille :855.364ecart-type taille :41.4749985413
+moyenne hydro :-0.4706ecart-type taille :0.258015580925
+moyenne phi :6.60924ecart-type taille :1.41012560519
+moyenne cysteine :19.044ecart-type taille :12.3584005438
+moyenne beta :11.26596ecart-type taille :11.8346217886
+moyenne alpha :6.70904ecart-type taille :6.74069330844
+moyenne coude :1.03004ecart-type taille :1.23122849155
 cluster n 16
-moyenne taille :1034.668
-moyenne hydro :-0.46812
-moyenne phi :6.61072
-moyenne cysteine :21.324
-moyenne beta :10.04432
-moyenne alpha :6.50272
-moyenne coude :0.77796
+moyenne taille :1034.668ecart-type taille :71.375330304
+moyenne hydro :-0.46812ecart-type taille :0.242221521752
+moyenne phi :6.61072ecart-type taille :1.27980759554
+moyenne cysteine :21.324ecart-type taille :10.7287941541
+moyenne beta :10.04432ecart-type taille :11.7958692998
+moyenne alpha :6.50272ecart-type taille :7.89597597524
+moyenne coude :0.77796ecart-type taille :0.843814812859
 cluster n 17
-moyenne taille :1387.144
-moyenne hydro :-0.5016
-moyenne phi :6.588
-moyenne cysteine :26.796
-moyenne beta :6.9276
-moyenne alpha :4.75036
-moyenne coude :0.61812
+moyenne taille :1387.144ecart-type taille :149.779341913
+moyenne hydro :-0.5016ecart-type taille :0.252955015764
+moyenne phi :6.588ecart-type taille :1.25757862577
+moyenne cysteine :26.796ecart-type taille :16.1938995921
+moyenne beta :6.9276ecart-type taille :9.17020770975
+moyenne alpha :4.75036ecart-type taille :5.53505348397
+moyenne coude :0.61812ecart-type taille :0.83108751982

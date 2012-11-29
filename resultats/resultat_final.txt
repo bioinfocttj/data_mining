@@ -6006,3 +6006,5 @@ cluster n1929
 	-Cordon-bleu protein-like 1
 	-CAP-Gly domain-containing linker protein 1
 	-Regulator of nonsense transcripts 2
+Nombre de cluster a une proteine :
+1221

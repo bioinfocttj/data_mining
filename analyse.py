@@ -69,21 +69,6 @@ def stat(file_name,dico,texte):
 
 dico_prot,dico_struct,dico_chimie = create_table('homo_final.xml')
 
-#~ def stat_structure(file_name,texte):
-	#~ file = open(file_name,'r')
-	#~ for line in file :from mpl_toolkits.mplot3d import Axes3D
-		#~ if line!=('\n'):
-			#~ valeurs=[]
-			#~ tab = line.split(' ')
-			#~ for i in range (len(tab)-1):
-				#~ valeurs.append(dico_prot[tab[i]][texte])
-			#~ moyenne = numpy.average(valeurs)
-			#~ ecartType = numpy.std(valeurs)
-			#~ print 'moyenne', numpy.average(valeurs)
-			#~ print 'ecart-type',numpy.std(valeurs)
-	#~ file.close()
-
-
 def resultat(file_name,file_result):
 	nb_cluster_seul = 0
 	nb_cluster=0
@@ -110,10 +95,8 @@ def moyenne_intracluster(file_name,file_result):
 	nb_cluster=0
 	file = 	file = open(file_name,'r')
 	file2 = open(file_result,'w')
-	histo_taille = []
 	hydro_std= []
 	histo_hydro = []
-	histo_phi = []
 	for line in file :
 		taille = []
 		hydro = []
@@ -135,72 +118,71 @@ def moyenne_intracluster(file_name,file_result):
 				hydro.append(dico_chimie[tab[i]]['gravy'])
 				phi.append(dico_chimie[tab[i]]['phi'])
 				cys.append(dico_struct[tab[i]]['nb_cystein'])
+			moyenne_struct = numpy.average(taille)
 			moyenne_taille = numpy.average(taille)
-			std_taille=numpy.std(taille)
 			moyenne_hydro = numpy.average(hydro)
-			std_hydro=numpy.std(hydro)
 			moyenne_phi = numpy.average(phi)
-			std_phi=numpy.std(phi)
 			moyenne_cys = numpy.average(cys) 
-			std_cys=numpy.std(cys)
 			moyenne_strand = numpy.average(strand)
 			moyenne_turn = numpy.average(turn)
 			moyenne_helix = numpy.average(helix)
+			std_struct = numpy.std(taille)
+			std_taille = numpy.std(taille)
+			std_hydro = numpy.std(hydro)
+			std_phi = numpy.std(phi)
+			std_cys = numpy.std(cys) 
+			std_strand = numpy.std(strand)
+			std_turn = numpy.std(turn)
+			std_helix = numpy.std(helix)
 			file2.write('moyenne taille :')
 			file2.write(str(moyenne_taille))
+			file2.write('ecart-type taille :')
+			file2.write(str(std_taille))
 			file2.write('\n')
 			file2.write('moyenne hydro :')
 			file2.write(str(moyenne_hydro))
+			file2.write('ecart-type taille :')
+			file2.write(str(std_hydro))
 			file2.write('\n')
 			file2.write('moyenne phi :')
 			file2.write(str(moyenne_phi))
+			file2.write(' ecart-type taille :')
+			file2.write(str(std_phi))
 			file2.write('\n')
-			file2.write('moyenne cysteine :')
+			file2.write('moyenne cysteine : ')
 			file2.write(str(moyenne_cys))
+			file2.write(' ecart-type taille : ')
+			file2.write(str(std_cys))
 			file2.write('\n')
-			file2.write('moyenne beta :')
+			file2.write('moyenne beta : ')
 			file2.write(str(moyenne_helix))
+			file2.write(' ecart-type taille : ')
+			file2.write(str(std_helix))
 			file2.write('\n')
 			file2.write('moyenne alpha :')
 			file2.write(str(moyenne_strand))
+			file2.write(' ecart-type taille : ')
+			file2.write(str(std_strand))
 			file2.write('\n')
 			file2.write('moyenne coude :')
 			file2.write(str(moyenne_turn))
+			file2.write(' ecart-type taille : ')
+			file2.write(str(std_turn))
 			file2.write('\n')
-			histo_taille.append(moyenne_taille)
 			hydro_std.append(std_hydro)
 			histo_hydro.append(moyenne_hydro)
-			histo_phi.append(moyenne_phi)
 	file.close()
 	file2.close()
-	#~ y=[]
-	#~ for i in range(len(histo_taille)):
-		#~ y.append(i)
-	#~ fig = figure()
-	#~ ax = fig.add_subplot(1,1,1)
-	#~ ax.bar(y,hydro_std)
-	#~ ax.scatter(histo_taille,histo_hydro,color='blue',s=100,edgecolor='none')
-	#~ ax.scatter(histo_taille, histo_hydro, histo_phi)
-	#~ show()
-
-#~ print '----------TAILLE----------------------'
-#~ 
-#~ stat('resultat_taille1.txt',dico_prot,'length')
-#~ 
-#~ 
-#~ print '--------------HYDROPHOBICITE------------------'
-#~ 
-#~ stat('resultat_hydro3.txt',dico_chimie,'gravy')
-#~ 
-#~ print '--------------PHI-----------------'
-#~ 
-#~ stat('resultat_hydro3.txt',dico_chimie,'phi')
-#~ 
-#~ print '--------------Cysteine-----------------'
-#~ 
-#~ stat('resultat_hydro3.txt',dico_struct,'nb_cystein')
-#~ 
-#~ resultat('resultat_organe6.txt','resultat_final.txt')
+	y=[]
+	for i in range(len(histo_taille)):
+		y.append(i)
+	fig = figure()
+	ax = fig.add_subplot(1,1,1)
+	ax.bar(y,histo_hydro,yerr=hydro_std)
+	xlabel('clusters')
+	ylabel('hydrophobicite')
+	title("moyenne et ecart-type intercluster pour l'hydrophobicite")
+	#~ show()#---------------- decommenter pour afficher les histogrammes
 
 moyenne_intracluster('resultat_taille1.txt','resultat_intracluster1.txt')
 moyenne_intracluster('resultat_structure2.txt','resultat_intracluster2.txt')
@@ -209,4 +191,4 @@ moyenne_intracluster('resultat_phi4.txt','resultat_intracluster4.txt')
 moyenne_intracluster('resultat_cys5.txt','resultat_intracluster5.txt')
 moyenne_intracluster('resultat_organe6.txt','resultat_intracluster6.txt')
 
-resultat('resultat_organe6.txt','blabla.txt')
+

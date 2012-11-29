@@ -4,7 +4,6 @@ sys.path.append('/net/cremi/alelievr/data_mining/biopython160/')
 from Bio.SeqUtils import ProtParam
 
 file = open('/net/stockage/bioinfo_promo_2011_2013/DataMining/homo_sapiens.xml','r')
-#~ file = open('/net/cremi/alelievr/data_mining/echantillon.xml','r')
 file2 = open('tmp.xml','w')
 
 file2.write('<uniprot>')
@@ -177,6 +176,4 @@ for e in nothuman :
 	
     
 tree.write("homo_final.xml")
-#~ tree.write("echantillon_test.xml")
-
 
